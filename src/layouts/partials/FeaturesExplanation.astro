@@ -3,12 +3,38 @@ import ImageMod from "@/components/ImageMod.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const { hideHeadingBar } = Astro.props;
+const { hideHeadingBar, content } = Astro.props;
 
-const sectionData = await getListPage(
-  "featuresExplanationSection",
-  "features-explanation"
-);
+let sectionData;
+if (content) {
+  let list = content.list || [];
+  if (content.rows) {
+    list = [
+      {
+        row: content.rows?.map((r: any) => ({
+          title: r.title,
+          description: `**Traditional:** ${r.old_val} <br/><span class="text-tertiary">**Proposal.biz:** ${r.new_val}</span>`
+        })) || []
+      }
+    ];
+  }
+  sectionData = {
+    data: {
+      enable: content.enable !== false,
+      title: content.title,
+      subtitle: content.subtitle || "",
+      description: content.description || "",
+      image: content.image || "/images/features/features-explanation.png",
+      list,
+    }
+  };
+} else {
+  sectionData = await getListPage(
+    "featuresExplanationSection",
+    "features-explanation"
+  );
+}
+
 if(!sectionData.data.enable){
   return null;
 }

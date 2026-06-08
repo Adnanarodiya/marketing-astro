@@ -5,17 +5,16 @@ import { markdownify } from "@/lib/utils/textConverter";
 
 const { largeHeading, content } = Astro.props;
 
-const sectionData = await getListPage(
-  "pricingSection",
-  "pricing"
-);
-if(!sectionData.data.enable){
+const sectionData = await getListPage("pricingSection", "pricing");
+if (!sectionData.data.enable) {
   return null;
 }
 let { title, subtitle, description, plans, plans_labels } = sectionData.data;
 // Override default blog data (Title, Subtitle & Description) with props if provided
 if (content) {
-  ({ title, subtitle, description } = content);
+  title = content.title || title;
+  description = content.content || content.description || description;
+  subtitle = content.subtitle || subtitle;
 }
 ---
 
@@ -117,13 +116,13 @@ if (content) {
                           <span
                             class="text-monthly text-lg/[inherit] group-[.has-dark-bg]:text-text-light"
                             set:html={markdownify(
-                              item.price_description_monthly
+                              item.price_description_monthly,
                             )}
                           />
                           <span
                             class="text-yearly hidden text-lg/[inherit] group-[.has-dark-bg]:text-text-light"
                             set:html={markdownify(
-                              item.price_description_yearly
+                              item.price_description_yearly,
                             )}
                           />
                         </>
@@ -142,7 +141,7 @@ if (content) {
 
                   {item.button && item.button.enable && (
                     <a
-                      class={`${(index + 1) % 2 === 0 ? "btn-light hover:bg-slate-600" : "btn-dark"} btn`}
+                      class={`${(index + 1) % 2 === 0 ? "btn-light hover:bg-secondary" : "btn-dark"} btn`}
                       href={item.button.link}>
                       {item.button.label}
                       <span class="icon-wrapper">
@@ -219,7 +218,7 @@ if (content) {
     function toggleVisibility(
       selector: string,
       addClass: string,
-      removeClass: string
+      removeClass: string,
     ) {
       const elements = document.querySelectorAll<HTMLElement>(selector);
       elements.forEach(function (element) {

@@ -1,16 +1,26 @@
 .btn {
   @apply inline-flex cursor-pointer flex-nowrap items-center gap-2 gap-x-4 overflow-hidden rounded-full border border-transparent py-1.5 ps-8 pe-2 text-base font-medium whitespace-nowrap capitalize transition duration-300 md:text-lg/[inherit];
 
-  @apply [&:hover_.icon-wrapper_.icon]:translate-x-full!;
-  @apply [&:hover_.icon-wrapper_.icon:first-child]:opacity-100;
-  @apply [&:hover_.icon-wrapper_.icon:last-child]:opacity-0;
+  &:hover .icon-wrapper .icon {
+    transform: translateX(100%) !important;
+  }
+
+  &:hover .icon-wrapper .icon:first-child {
+    opacity: 1;
+  }
+
+  &:hover .icon-wrapper .icon:last-child {
+    opacity: 0;
+  }
 }
+
 &:hover .icon:last-child {
-  @apply transition-[opacity,transform] duration-[0.6s] ease-in-out;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .icon-wrapper {
   @apply flex h-12 w-12 justify-end overflow-hidden rounded-full transition-all duration-300;
+
   .icon {
     @apply text-text-dark flex h-12 min-w-12 items-center justify-center gap-x-0 align-middle transition-all;
     transition-duration: 0.4s;
@@ -30,15 +40,17 @@
 }
 
 .btn-icon {
-  @apply h-14 w-8 items-center justify-center p-0!;
+  @apply h-14 w-8 items-center justify-center;
+  padding: 0 !important;
   @apply [&_.icon-wrapper]:gap-x-4 [&:hover_.icon-wrapper]:gap-x-0;
 
   .icon-wrapper,
   .icon {
     @apply w-full;
   }
+
   .icon {
-    @apply min-w-full!;
+    min-width: 100% !important;
   }
 }
 
@@ -47,17 +59,23 @@
 
   &:hover {
     @apply text-tertiary [&_svg]:text-tertiary;
+
     .icon-wrapper {
       @apply gap-x-0;
     }
   }
+
   .icon-wrapper {
     @apply h-6 w-6 gap-x-3;
   }
+
   .icon {
-    @apply h-6 w-6 min-w-6!;
+    @apply h-6 w-6;
+    min-width: 1.5rem !important;
+
     svg {
-      @apply h-4 w-4!;
+      width: 1rem !important;
+      height: 1rem !important;
     }
   }
 }
@@ -66,8 +84,10 @@
 .btn-outline-primary {
   @apply ps-8 pe-2;
 }
+
 .btn-light,
 .btn-dark {
+
   .icon-wrapper,
   .icon {
     @apply w-8;
@@ -79,9 +99,10 @@
 }
 
 .btn-primary {
-  @apply border-primary bg-primary hover:border-secondary hover:bg-secondary hover:text-text-dark text-white;
+  @apply bg-(image:--color-primary) hover:bg-secondary hover:text-text-dark text-white;
   @apply [&:hover_.icon-wrapper]:bg-text-dark [&:hover_svg]:text-text-light [&_.icon-wrapper]:bg-secondary [&_svg]:text-text-dark;
 }
+
 .btn-primary-light {
   @apply border-light bg-light text-text-dark hover:border-secondary hover:bg-secondary hover:text-text-dark;
   @apply [&:hover_.icon-wrapper]:bg-text-dark [&:hover_svg]:text-text-light [&_.icon-wrapper]:bg-secondary [&_svg]:text-text-dark;
@@ -90,6 +111,7 @@
 .btn-light {
   @apply border-light bg-light text-text-dark hover:border-text-dark hover:bg-text-dark hover:text-text-light [&:hover_svg]:text-text-light [&_svg]:text-text-dark;
 }
+
 .btn-dark {
   @apply border-text-dark bg-text-dark hover:border-tertiary hover:bg-tertiary [&_svg]:text-text-light text-white;
 }

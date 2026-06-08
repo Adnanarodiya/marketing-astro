@@ -4,7 +4,30 @@ import DynamicIcon from "@/helpers/DynamicIcon";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const sectionData = await getListPage("homeBannerSection", "home-banner");
+const { content } = Astro.props;
+let sectionData;
+if (content) {
+  sectionData = {
+    data: {
+      enable: content.enable !== false,
+      title: content.title,
+      description: content.content,
+      buttons: [
+        content.button_primary,
+        content.button_secondary
+      ].filter(Boolean),
+      images: content.images || [
+        { src: "/images/banner-main.png", alt: "banner-main" },
+        { src: "/images/banner-1.png", alt: "banner-1" },
+        { src: "/images/banner-2.png", alt: "banner-2" },
+        { src: "/images/banner-3.png", alt: "banner-3" },
+      ]
+    }
+  };
+} else {
+  sectionData = await getListPage("homeBannerSection", "home-banner");
+}
+
 if(!sectionData.data.enable){
   return null;
 }

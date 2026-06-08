@@ -20,6 +20,8 @@ const {
   image,
   noindex,
   canonical,
+  banner,
+  bannerData,
 } = Astro.props;
 ---
 
@@ -147,7 +149,11 @@ const {
     }
 
     <TwSizeIndicator />
-    <Header banner={Astro.url.pathname === "/"} errorPage={notFoundPage} />
+    <Header
+      banner={banner !== undefined ? banner : Astro.url.pathname === "/"}
+      bannerData={bannerData}
+      errorPage={notFoundPage}
+    />
     <main id="main-content">
       <slot />
     </main>

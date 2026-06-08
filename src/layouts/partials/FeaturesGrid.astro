@@ -6,15 +6,46 @@ import { markdownify } from "@/lib/utils/textConverter";
 
 const { content, largeHeading } = Astro.props;
 
-const sectionData = await getListPage("featuresGridSection", "features-grid");
-if(!sectionData.data.enable){
+let sectionData;
+if (content) {
+  let list = content.list || [];
+  if (content.type === "stats_grid") {
+    list = content.items?.map((item: any) => ({
+      title: item.role,
+      description: `**${item.tagline}**<br/>${item.description}`,
+    })) || [];
+  } else if (content.type === "business_needs") {
+    list = content.items?.map((item: any) => ({
+      title: item.title,
+      description: item.content,
+      icon: item.icon,
+    })) || [];
+  } else if (content.type === "our_features") {
+    list = content.items?.map((item: any) => ({
+      title: item.title,
+      description: item.description,
+      icon: item.logo,
+    })) || [];
+  }
+
+  sectionData = {
+    data: {
+      enable: content.enable !== false,
+      title: content.title,
+      subtitle: content.subtitle || "",
+      description: content.description || content.content || "",
+      list,
+    }
+  };
+} else {
+  sectionData = await getListPage("featuresGridSection", "features-grid");
+}
+
+if (!sectionData.data.enable) {
   return null;
 }
-let { title, subtitle, description, list } = sectionData.data;
 
-if (content) {
-  ({ title, subtitle, description } = content);
-}
+let { title, subtitle, description, list } = sectionData.data;
 ---
 
 <section class="section">
@@ -54,6 +85,11 @@ if (content) {
                   data-aos-delay={index * 150}>
                   <div
                     class={`${(index + 1) % 3 === 0 ? "rounded-s-3xl" : "rounded-3xl"} flex min-h-full flex-col justify-start bg-light p-8`}>
+                    {item.icon && (
+                      <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary/10 text-tertiary">
+                        <DynamicIcon icon={item.icon} className="text-2xl" />
+                      </div>
+                    )}
                     {item.title && (
                       <h3 class="h4 mb-4" set:html={markdownify(item.title)} />
                     )}
@@ -92,6 +128,11 @@ if (content) {
                   <div class="rounded-3xl bg-light p-8">
                     <div class="row gx-0 g-5 items-center">
                       <div class="lg:col-4 lg:pe-6">
+                        {item.icon && (
+                          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary/10 text-tertiary">
+                            <DynamicIcon icon={item.icon} className="text-2xl" />
+                          </div>
+                        )}
                         {item.title && (
                           <h3
                             class="h4 mb-4"
@@ -121,13 +162,15 @@ if (content) {
                           </a>
                         )}
                       </div>
-                      <div class="lg:col-8 lg:ps-6">
-                        <ImageMod
-                          class="rounded-3xl custom-shadow-sm"
-                          src={item.image}
-                          alt={`icon related to ${item.title}`}
-                        />
-                      </div>
+                      {item.image && (
+                        <div class="lg:col-8 lg:ps-6">
+                          <ImageMod
+                            class="rounded-3xl custom-shadow-sm"
+                            src={item.image}
+                            alt={`icon related to ${item.title}`}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

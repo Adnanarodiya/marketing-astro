@@ -2,16 +2,25 @@
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const clients = await getListPage(
-  "clientsSection",
-  "clients"
-);
+const { content } = Astro.props;
+let sectionData;
+if (content) {
+  sectionData = {
+    data: {
+      enable: content.enable !== false,
+      title: content.title,
+      list: content.list || content.items?.map((item: any) => item.image || item) || [],
+    }
+  };
+} else {
+  sectionData = await getListPage("clientsSection", "clients");
+}
 
-if(!clients.data.enable){
+if(!sectionData.data.enable){
   return null;
 }
 
-const { title, list } = clients.data;
+const { title, list } = sectionData.data;
 ---
 
 <section class="section">

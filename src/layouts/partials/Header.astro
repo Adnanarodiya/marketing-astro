@@ -18,10 +18,10 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 
-const { banner, errorPage } = Astro.props;
+const { banner, bannerData, errorPage } = Astro.props;
 
 const { main }: { main: NavigationLink[] } = menu;
-const { navigation_button } = config;
+const { navigation_buttons } = config;
 const { pathname } = Astro.url;
 ---
 
@@ -114,44 +114,52 @@ const { pathname } = Astro.url;
           ))
         }
         {
-          navigation_button.enable && (
+          navigation_buttons.login?.enable && (
             <a
-              class="btn btn-dark mt-2 lg:hidden"
-              href={navigation_button.link}
+              class="btn btn-outline-primary px-6 mt-2 lg:hidden w-full justify-center"
+              href={navigation_buttons.login.link}
               target={
-                navigation_button.link.startsWith("http") ? "_blank" : "_self"
+                navigation_buttons.login.link.startsWith("http") ? "_blank" : "_self"
               }>
-              {navigation_button.label}
-              <span class="icon-wrapper">
-                <span class="icon">
-                  <DynamicIcon icon={"FaArrowRight"} />
-                </span>
-                <span class="icon" aria-hidden="true">
-                  <DynamicIcon icon={"FaArrowRight"} />
-                </span>
-              </span>
+              {navigation_buttons.login.label}
+            </a>
+          )
+        }
+        {
+          navigation_buttons.signup?.enable && (
+            <a
+              class="btn btn-primary px-6 mt-2 lg:hidden w-full justify-center"
+              href={navigation_buttons.signup.link}
+              target={
+                navigation_buttons.signup.link.startsWith("http") ? "_blank" : "_self"
+              }>
+              {navigation_buttons.signup.label}
             </a>
           )
         }
       </ul>
-      <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
+      <div class="order-1 ml-auto flex items-center gap-3 md:order-2 lg:ml-0">
         {
-          navigation_button.enable && (
+          navigation_buttons.login?.enable && (
             <a
-              class="btn btn-dark hidden lg:flex"
-              href={navigation_button.link}
+              class="btn btn-outline-primary px-6 hidden lg:flex"
+              href={navigation_buttons.login.link}
               target={
-                navigation_button.link.startsWith("http") ? "_blank" : "_self"
+                navigation_buttons.login.link.startsWith("http") ? "_blank" : "_self"
               }>
-              {navigation_button.label}
-              <span class="icon-wrapper">
-                <span class="icon">
-                  <DynamicIcon icon={"FaArrowRight"} />
-                </span>
-                <span class="icon" aria-hidden="true">
-                  <DynamicIcon icon={"FaArrowRight"} />
-                </span>
-              </span>
+              {navigation_buttons.login.label}
+            </a>
+          )
+        }
+        {
+          navigation_buttons.signup?.enable && (
+            <a
+              class="btn btn-primary px-6 hidden lg:flex"
+              href={navigation_buttons.signup.link}
+              target={
+                navigation_buttons.signup.link.startsWith("http") ? "_blank" : "_self"
+              }>
+              {navigation_buttons.signup.label}
             </a>
           )
         }
@@ -160,7 +168,7 @@ const { pathname } = Astro.url;
   </header>
 
   {/* Show Only In Home Page */}
-  {banner && <HomeBanner />}
+  {banner && <HomeBanner content={bannerData} />}
 
   <div aria-hidden="true">
     <ImageMod

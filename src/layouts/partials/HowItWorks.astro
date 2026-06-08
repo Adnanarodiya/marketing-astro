@@ -1,14 +1,35 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
+import DynamicIcon from "@/helpers/DynamicIcon";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
+const { content } = Astro.props;
+let sectionData;
+if (content) {
+  sectionData = {
+    data: {
+      enable: content.enable !== false,
+      title: content.title,
+      subtitle: content.subtitle || "",
+      description: content.description || content.content || "",
+      list: content.list || content.items?.map((item: any, index: number) => ({
+        icon: item.icon || item.logo || null,
+        title: item.title,
+        description: item.description || item.content,
+        index,
+      })) || [],
+      button: content.button || null
+    }
+  };
+} else {
+  sectionData = await getListPage("howItWorksSection", "how-it-works");
+}
 
-const sectionData = await getListPage("howItWorksSection", "how-it-works");
 if(!sectionData.data.enable){
   return null;
 }
 
-const { title, subtitle, description, list } = sectionData.data;
+const { title, subtitle, description, list, button } = sectionData.data;
 ---
 
 <section class="section">
@@ -39,13 +60,19 @@ const { title, subtitle, description, list } = sectionData.data;
                 data-aos="fade-up-sm"
                 data-aos-delay={index * 100}>
                 <div class="min-h-full rounded-xl bg-light px-6 py-12 text-center md:rounded-3xl">
-                  {item.icon && (
-                    <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary">
-                      <ImageMod
-                        class="h-6 w-6 object-cover"
-                        src={item.icon}
-                        alt={`icon related to ${item.title}`}
-                      />
+                  {(item.icon || item.index !== undefined) && (
+                    <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary text-text-light font-bold">
+                      {item.icon && item.icon.includes(":") ? (
+                        <DynamicIcon icon={item.icon} className="text-2xl text-white" />
+                      ) : item.icon ? (
+                        <ImageMod
+                          class="h-6 w-6 object-cover"
+                          src={item.icon}
+                          alt={`icon related to ${item.title}`}
+                        />
+                      ) : (
+                        <span>{item.index + 1}</span>
+                      )}
                     </div>
                   )}
                   {item.title && (
@@ -59,6 +86,23 @@ const { title, subtitle, description, list } = sectionData.data;
             ))
           }
         </div>
+        {
+          button?.enable && (
+            <div class="text-center mt-12" data-aos="fade-up-sm">
+              <a class="btn btn-primary" href={button.link}>
+                {button.label}
+                <span class="icon-wrapper">
+                  <span class="icon">
+                    <DynamicIcon icon={"FaArrowRight"} />
+                  </span>
+                  <span class="icon" aria-hidden="true">
+                    <DynamicIcon icon={"FaArrowRight"} />
+                  </span>
+                </span>
+              </a>
+            </div>
+          )
+        }
       </div>
     </div>
   </div>

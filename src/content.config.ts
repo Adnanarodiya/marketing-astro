@@ -5,6 +5,7 @@ import {
   changelog,
   contact,
   features,
+  homepage,
   integration,
   pages,
   pricing,
@@ -32,6 +33,7 @@ import {
 // Export collections
 export const collections = {
   // Pages
+  homepage,
   about,
   authors,
   blog,

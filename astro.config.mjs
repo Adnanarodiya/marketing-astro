@@ -15,47 +15,14 @@ export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   fonts: [
     {
-      provider: fontProviders.local(),
-      name: "Satoshi",
+      provider: fontProviders.fontsource(),
+      name: "Poppins",
       cssVariable: "--font-primary",
-      options: {
-        variants: [
-          {
-            src: ["./public/fonts/Satoshi-Regular.woff2"],
-            weight: 400,
-            style: "normal",
-          },
-          {
-            src: ["./public/fonts/Satoshi-Medium.woff2"],
-            weight: 500,
-            style: "normal",
-          },
-          {
-            src: ["./public/fonts/Satoshi-Bold.woff2"],
-            weight: 700,
-            style: "normal",
-          },
-        ],
-      },
     },
     {
-      provider: fontProviders.local(),
-      name: "Clash Grotesk",
+      provider: fontProviders.fontsource(),
+      name: "Poppins",
       cssVariable: "--font-secondary",
-      options: {
-        variants: [
-          {
-            src: ["./public/fonts/ClashGrotesk-Medium.woff2"],
-            weight: 500,
-            style: "normal",
-          },
-          {
-            src: ["./public/fonts/ClashGrotesk-Bold.woff2"],
-            weight: 700,
-            style: "normal",
-          },
-        ],
-      },
     },
   ],
   integrations: [

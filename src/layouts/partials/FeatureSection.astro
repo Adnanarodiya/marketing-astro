@@ -4,10 +4,24 @@ import DynamicIcon from "@/helpers/DynamicIcon";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const sectionData = await getListPage(
-  "featuresSection",
-  "features"
-);
+const { content } = Astro.props;
+let sectionData;
+if (content) {
+  sectionData = {
+    data: {
+      enable: content.enable !== false,
+      title: content.title,
+      subtitle: content.subtitle || "",
+      description: content.description || "",
+      list: content.list || [],
+    }
+  };
+} else {
+  sectionData = await getListPage(
+    "featuresSection",
+    "features"
+  );
+}
 if(!sectionData.data.enable){
   return null;
 }
