@@ -13,7 +13,7 @@ if (content) {
   hero = content;
 } else {
   const contactIndex = await getListPage("contact", "-index");
-  if (contactIndex.data.draft){
+  if (contactIndex.data.draft) {
     return Astro.redirect("/404");
   }
   hero = contactIndex.data.sections?.find((s) => s.type === "contact_hero");
@@ -26,7 +26,7 @@ if (!hero) {
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="lg:col-7 lg:pe-20 lg:pt-16" data-aos="fade-left-sm">
+      <div class="lg:col-6 lg:pe-6 lg:pt-16" data-aos="fade-left-sm">
         {
           hero.subtitle && (
             <p
@@ -82,7 +82,7 @@ if (!hero) {
         }
       </div>
       <div
-        class="relative pt-24 lg:col-5 lg:pt-16"
+        class="relative pt-24 lg:col-6 lg:pt-16"
         data-aos="fade-left-sm"
         data-aos-delay="200">
         <div class="mb-4 flex items-center justify-center">
@@ -98,31 +98,28 @@ if (!hero) {
           <form class="row g-4" action={contact_form_action} method="POST">
             <div class="lg:col-6">
               <label for="name" class="form-label">
-                First Name <span class="text-red-500">*</span>
+                Name <span class="text-red-500">*</span>
               </label>
               <input
                 id="name"
                 name="name"
                 class="form-input"
-                placeholder="Your First Name"
+                placeholder="Your Name"
                 required
                 type="text"
               />
             </div>
             <div class="lg:col-6">
-              <label for="name" class="form-label">
-                Last Name <span class="text-red-500">*</span>
-              </label>
+              <label for="company" class="form-label">Company</label>
               <input
-                id="name"
-                name="name"
+                id="company"
+                name="company"
                 class="form-input"
-                placeholder="Your Last Name"
-                required
+                placeholder="Your Company Name"
                 type="text"
               />
             </div>
-            <div class="col-12">
+            <div class="lg:col-6">
               <label for="email" class="form-label">
                 Email <span class="text-red-500">*</span>
               </label>
@@ -135,44 +132,54 @@ if (!hero) {
                 type="email"
               />
             </div>
-            <div class="col-12">
-              <label for="comapny-name" class="form-label">
-                Company Name <span class="text-red-500">*</span>
-              </label>
+            <div class="lg:col-6">
+              <label for="phone" class="form-label">Phone</label>
               <input
-                id="comapny-name"
-                name="comapny-name"
+                id="phone"
+                name="phone"
                 class="form-input"
-                placeholder="Your Company Name"
-                required
-                type="text"
+                placeholder="Your Phone Number"
+                type="tel"
               />
             </div>
             <div class="col-12">
               <label for="subject" class="form-label">
                 Subject <span class="text-red-500">*</span>
               </label>
-              <input
+              <select
                 id="subject"
                 name="subject"
-                class="form-input"
-                placeholder="Your Company Name"
-                required
-                type="text"
-              />
+                class="form-input bg-white"
+                required>
+                <option value="" disabled selected>Select a subject...</option>
+                <option value="Accounting & Bookkeeping">
+                  Accounting & Bookkeeping
+                </option>
+                <option value="Payroll & HR">Payroll & HR</option>
+                <option value="Tax & VAT Services">Tax & VAT Services</option>
+                <option value="Business Consulting">Business Consulting</option>
+                <option value="MyHDF Portal">MyHDF Portal</option>
+                <option value="Other Inquiry">Other Inquiry</option>
+              </select>
             </div>
             <div class="col-12">
               <label for="message" class="form-label">
-                Write Message <span class="text-red-500">*</span>
+                Message <span class="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 class="form-input"
-                placeholder="Write Your Message Here"
+                placeholder="How can we help you"
                 required
-                rows="3">
+                rows="4">
               </textarea>
+            </div>
+            <div class="col-12">
+              <p class="text-sm text-text-dark/60">
+                <span class="text-red-500">*</span> Required fields. Your data will
+                only be used to process your inquiry.
+              </p>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-regular">
