@@ -20,12 +20,6 @@
     "footer_description": "Securing Your Digital World: Your Trusted Partner in Data Protection with Cutting Edge Solutions for Data Security.",
     "copyright": "Copyright © {year} Fortify. All Rights Reserved"
   },
-  "subscription": {
-    "enable": true,
-    "action": "#",
-    "title": "Subscribe to Our Newsletter!",
-    "description": "Stay Informed with Our Latest Security Insights - Subscribe to Our Newsletter!"
-  },
   "google_tag_manager": {
     "enable": false,
     "gtm_id": "GTM-XXXXXX"
