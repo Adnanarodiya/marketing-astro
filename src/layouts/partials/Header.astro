@@ -69,7 +69,9 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
                 <li class="nav-item nav-dropdown group relative">
                   <span
                     class={`nav-link flex items-center ${
-                      menu.children?.map(({ url }) => cleanPath(url)).includes(cleanPath(pathname))
+                      menu.children
+                        ?.map(({ url }) => cleanPath(url))
+                        .includes(cleanPath(pathname))
                         ? "active"
                         : ""
                     }`}>
@@ -103,8 +105,7 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
                     href={menu.url}
                     title={menu.name}
                     class={`nav-link flex items-center ${
-                      cleanPath(pathname) === cleanPath(menu.url) &&
-                      "active"
+                      cleanPath(pathname) === cleanPath(menu.url) && "active"
                     }`}>
                     {menu.name}
                   </a>
@@ -116,11 +117,13 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
         {
           navigation_buttons.dashboard?.enable && (
             <a
-              class="btn btn-primary px-6 mt-2 lg:hidden w-full justify-center"
+              class="btn btn-primary mt-2 lg:hidden w-full h-[60px] items-center justify-center px-8"
               href={navigation_buttons.dashboard.link}
               title={navigation_buttons.dashboard.label}
               target={
-                navigation_buttons.dashboard.link.startsWith("http") ? "_blank" : "_self"
+                navigation_buttons.dashboard.link.startsWith("http")
+                  ? "_blank"
+                  : "_self"
               }>
               {navigation_buttons.dashboard.label}
             </a>
@@ -131,11 +134,13 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
         {
           navigation_buttons.dashboard?.enable && (
             <a
-              class="btn btn-primary px-6 hidden lg:flex"
+              class="btn btn-primary hidden lg:flex h-[60px] items-center justify-center px-8"
               href={navigation_buttons.dashboard.link}
               title={navigation_buttons.dashboard.label}
               target={
-                navigation_buttons.dashboard.link.startsWith("http") ? "_blank" : "_self"
+                navigation_buttons.dashboard.link.startsWith("http")
+                  ? "_blank"
+                  : "_self"
               }>
               {navigation_buttons.dashboard.label}
             </a>

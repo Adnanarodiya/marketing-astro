@@ -4,8 +4,29 @@ import DynamicIcon from "@/helpers/DynamicIcon";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
+interface FeatureItem {
+  title: string;
+  image: string;
+  description?: string;
+  bulletpoints_y?: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  bulletpoints_x?: {
+    icon?: string;
+    title?: string;
+    description: string;
+  }[];
+  button?: {
+    enable: boolean;
+    label: string;
+    link: string;
+  };
+}
+
 const { content } = Astro.props;
-let sectionData;
+let sectionData: any;
 if (content) {
   sectionData = {
     data: {
@@ -25,7 +46,12 @@ if (content) {
 if(!sectionData.data.enable){
   return null;
 }
-const { title, subtitle, description, list } = sectionData.data;
+const { title, subtitle, description, list } = sectionData.data as {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  list: FeatureItem[];
+};
 ---
 
 <section class="section">
