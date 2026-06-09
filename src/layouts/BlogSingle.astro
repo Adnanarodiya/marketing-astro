@@ -47,6 +47,7 @@ const sections = post.data.sections || [
                             class="h-8 w-8 rounded-full object-cover"
                             src={postAuthor.data.image}
                             alt={postAuthor.data.title}
+                            title={postAuthor.data.title}
                           />
                         )}
                         {postAuthor?.data?.title && humanize(postAuthor.data.title)}
@@ -57,6 +58,7 @@ const sections = post.data.sections || [
                         class="h-8 w-8"
                         src="/images/icons/png/date.png"
                         alt="date icon"
+                        title="date icon"
                       />
                       <p class="inline-block font-medium text-tertiary">
                         {dateFormat(date, "iiii, MMM dd, yyyy")}
@@ -76,6 +78,7 @@ const sections = post.data.sections || [
                           height={500}
                           width={1200}
                           alt={title}
+                          title={title}
                           class="h-auto w-full rounded-3xl object-cover md:h-[700px]"
                           format="webp"
                         />

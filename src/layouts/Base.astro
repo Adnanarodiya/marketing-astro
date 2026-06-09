@@ -11,6 +11,7 @@ import {
   GoogleTagmanagerNoscript,
 } from "@digi4care/astro-google-tagmanager";
 import { Font } from "astro:assets";
+import { JsonLd } from "@/components/JsonLd";
 
 const {
   title,
@@ -22,6 +23,7 @@ const {
   canonical,
   banner,
   bannerData,
+  schema,
 } = Astro.props;
 ---
 
@@ -37,7 +39,7 @@ const {
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
-    <meta name="theme-name" content="fortify-astro" />
+    <meta name="theme-name" content="pontora-marketing" />
     <meta name="msapplication-TileColor" content="#000000" />
     <meta
       name="theme-color"
@@ -139,6 +141,8 @@ const {
       }`}
     />
     <meta name="twitter:card" content="summary_large_image" />
+
+    {schema && <JsonLd data={schema} />}
   </head>
   <body>
     {/* google tag manager noscript */}
@@ -154,7 +158,10 @@ const {
       bannerData={bannerData}
       errorPage={notFoundPage}
     />
-    <main id="main-content">
+    <main
+      id="main-content"
+      itemscope
+      itemtype={Astro.url.pathname === "/" ? "https://schema.org/WebSite" : "https://schema.org/WebPage"}>
       <slot />
     </main>
     <Footer />

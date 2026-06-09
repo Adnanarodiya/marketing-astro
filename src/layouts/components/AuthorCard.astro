@@ -14,6 +14,7 @@ const { title, image, social } = data.data;
         class="mx-auto mb-6 rounded"
         src={image}
         alt={title}
+        title={title}
         width={120}
         height={120}
         format="webp"
@@ -21,7 +22,7 @@ const { title, image, social } = data.data;
     )
   }
   <h4 class="mb-3">
-    <a href={`/authors/${data.slug}`}>{title}</a>
+    <a href={`/authors/${data.slug}`} title={title}>{title}</a>
   </h4>
   <p class="mb-4">
     {plainify(data.body?.slice(0, 100))}

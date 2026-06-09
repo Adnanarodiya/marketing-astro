@@ -63,6 +63,7 @@ const { title, subtitle, description, list } = sectionData.data;
                       class="rounded-tl-3xl drop-shadow-lg"
                       src={item.image}
                       alt={`icon related to ${item.title}`}
+                      title={`icon related to ${item.title}`}
                     />
                   )}
                 </div>
@@ -91,6 +92,7 @@ const { title, subtitle, description, list } = sectionData.data;
                               class="h-6 w-6 object-cover"
                               src={point.icon}
                               alt={`icon related to ${point.title}`}
+                              title={`icon related to ${point.title}`}
                             />
                           </div>
                         )}
@@ -129,7 +131,7 @@ const { title, subtitle, description, list } = sectionData.data;
                 )}
 
                 {item.button && item.button.enable && (
-                  <a class="btn btn-primary mt-12" href={item.button.link}>
+                  <a class="btn btn-primary mt-12" href={item.button.link} title={item.button.label}>
                     {item.button.label}
                     <span class="icon-wrapper">
                       <span class="icon">

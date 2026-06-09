@@ -69,6 +69,7 @@ const { title, subtitle, description, list, button } = sectionData.data;
                           class="h-6 w-6 object-cover"
                           src={item.icon}
                           alt={`icon related to ${item.title}`}
+                          title={`icon related to ${item.title}`}
                         />
                       ) : (
                         <span>{item.index + 1}</span>
@@ -89,7 +90,7 @@ const { title, subtitle, description, list, button } = sectionData.data;
         {
           button?.enable && (
             <div class="text-center mt-12" data-aos="fade-up-sm">
-              <a class="btn btn-primary" href={button.link}>
+              <a class="btn btn-primary" href={button.link} title={button.label}>
                 {button.label}
                 <span class="icon-wrapper">
                   <span class="icon">

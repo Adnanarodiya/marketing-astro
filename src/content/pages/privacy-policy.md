@@ -6,8 +6,6 @@ image: ""
 draft: false
 ---
 
-# Privacy Policy
-
 ## 1. General Information
 
 Haus der Finanzen GmbH takes the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the Swiss Federal Act on Data Protection (FADP / nFADP) and this Privacy Policy.

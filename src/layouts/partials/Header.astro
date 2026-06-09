@@ -87,6 +87,7 @@ const { pathname } = Astro.url;
                         <a
                           href={child.url}
                           aria-label={child.name}
+                          title={child.name}
                           class={`nav-dropdown-link block ${
                             (pathname === `${child.url}/` ||
                               pathname === child.url) &&
@@ -102,6 +103,7 @@ const { pathname } = Astro.url;
                 <li class="nav-item">
                   <a
                     href={menu.url}
+                    title={menu.name}
                     class={`nav-link flex items-center ${
                       (pathname === `${menu.url}/` || pathname === menu.url) &&
                       "active"
@@ -118,6 +120,7 @@ const { pathname } = Astro.url;
             <a
               class="btn btn-primary px-6 mt-2 lg:hidden w-full justify-center"
               href={navigation_buttons.dashboard.link}
+              title={navigation_buttons.dashboard.label}
               target={
                 navigation_buttons.dashboard.link.startsWith("http") ? "_blank" : "_self"
               }>
@@ -132,6 +135,7 @@ const { pathname } = Astro.url;
             <a
               class="btn btn-primary px-6 hidden lg:flex"
               href={navigation_buttons.dashboard.link}
+              title={navigation_buttons.dashboard.label}
               target={
                 navigation_buttons.dashboard.link.startsWith("http") ? "_blank" : "_self"
               }>
@@ -153,6 +157,7 @@ const { pathname } = Astro.url;
         ? "/images/banner-bg.png"
         : "/images/page-header.png"}
       alt="header image"
+      title="header image"
       format="webp"
     />
   </div>

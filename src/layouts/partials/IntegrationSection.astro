@@ -55,6 +55,7 @@ const integrationPage = Astro.url.pathname.startsWith("/integration");
                     <a
                       class="btn btn-icon absolute top-[8%] right-[8%] w-14! border-primary/15"
                       href={item.button.link}
+                      title={item.button.label}
                       target={
                         item.button.link.startsWith("http") ? "_blank" : "_self"
                       }>
@@ -74,6 +75,7 @@ const integrationPage = Astro.url.pathname.startsWith("/integration");
                       class="mb-3 w-28"
                       src={item.image}
                       alt={`${item.name}`}
+                      title={`${item.name}`}
                     />
                   )}
                   {item.name && (

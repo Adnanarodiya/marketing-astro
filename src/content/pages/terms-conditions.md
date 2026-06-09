@@ -6,7 +6,7 @@ image: ""
 draft: false
 ---
 
-# Legal Notice (Imprint)
+## Legal Notice (Imprint)
 
 ## Company Information
 

@@ -14,6 +14,7 @@ interface Props {
   fit?: "cover" | "contain" | "fill" | "none" | "scale-down";
   class?: string;
   style?: any;
+  title?: string;
 }
 
 // Destructuring Astro.props to get the component's props
@@ -27,6 +28,7 @@ let {
   class: className,
   format,
   fit, style,
+  title,
 } = Astro.props;
 
 src = `/public${src}`;
@@ -49,6 +51,7 @@ const isValidPath = images[src] ? true : false;
     <Image
       src={images[src]() as Promise<{ default: ImageMetadata }>}
       alt={alt}
+      title={title || alt}
       width={width}
       height={height}
       loading={loading}

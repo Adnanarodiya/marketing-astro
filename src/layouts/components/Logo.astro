@@ -21,7 +21,7 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand inline-block">
+<a href="/" class="navbar-brand inline-block" title={title}>
   {
     src || srcDarkmode || logo || logo_darkmode ? (
       <ImageMod
@@ -30,6 +30,7 @@ const {
         width={logo_width.replace("px", "") * 2}
         height={logo_height.replace("px", "") * 2}
         alt={title}
+        title={title}
         style={{
           height: logo_height.replace("px", "") + "px",
           width: "auto",

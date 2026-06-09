@@ -142,7 +142,8 @@ if (content) {
                   {item.button && item.button.enable && (
                     <a
                       class={`${(index + 1) % 2 === 0 ? "btn-light hover:bg-secondary" : "btn-dark"} btn`}
-                      href={item.button.link}>
+                      href={item.button.link}
+                      title={item.button.label}>
                       {item.button.label}
                       <span class="icon-wrapper">
                         <span class="icon">

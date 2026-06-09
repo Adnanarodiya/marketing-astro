@@ -60,6 +60,7 @@ const { title, description, buttons, images } = sectionData.data;
                     <a
                       class={`${index === 0 ? "btn-primary" : "btn-outline-primary"} btn `}
                       href={link}
+                      title={label}
                       target={link.startsWith("http") ? "_blank" : "_self"}
                       rel="noopener">
                       {label}
@@ -86,7 +87,7 @@ const { title, description, buttons, images } = sectionData.data;
                 data-aos-delay="400">
                 <div class="max-h-[510px] overflow-hidden">
                   {images[0] && (
-                    <ImageMod src={images[0].src} alt={images[0].alt} />
+                    <ImageMod src={images[0].src} alt={images[0].alt} title={images[0].alt} />
                   )}
                 </div>
               </div>
@@ -101,6 +102,7 @@ const { title, description, buttons, images } = sectionData.data;
                       <ImageMod
                         src={src}
                         alt={alt}
+                        title={alt}
                         class={`${index === 0 ? "min-[350px]:h-20 lg:h-[72px] custom-shadow" : index === 1 ? "custom-shadow-sm min-[350px]:h-20 lg:h-[98px]" : "custom-shadow min-[350px]:h-20 lg:h-[84px]"} rounded-md md:rounded-xl w-auto`}
                       />
                     </div>

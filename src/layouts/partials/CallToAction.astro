@@ -28,7 +28,7 @@ const { enable = true, title, description, image = "/images/cta-bg.svg", button,
             class="absolute top-1/2! -translate-y-1/2! left-1/2! -translate-x-1/2! rotate-[7.83deg] pointer-events-none"
             data-aos="fade-in"
             data-aos-delay="200">
-            <ImageMod class=" h-[641px] w-auto " src={image} alt="cta-image" />
+            <ImageMod class=" h-[641px] w-auto " src={image} alt="cta-image" title="cta-image" />
           </div>
           <div class="row items-center justify-center">
             <div class="lg:col-8 text-center">
@@ -48,6 +48,7 @@ const { enable = true, title, description, image = "/images/cta-bg.svg", button,
                   <a
                     class="btn btn-primary-light"
                     href={button.link}
+                    title={button.label}
                     target={button.link.startsWith("http") ? "_blank" : "_self"}
                     rel="noopener"
                     data-aos="fade-up-sm"
@@ -67,6 +68,7 @@ const { enable = true, title, description, image = "/images/cta-bg.svg", button,
                   <a
                     class="btn btn-outline-light"
                     href={secondary_link.link}
+                    title={secondary_link.label}
                     target={secondary_link.link.startsWith("http") ? "_blank" : "_self"}
                     rel="noopener"
                     data-aos="fade-up-sm"

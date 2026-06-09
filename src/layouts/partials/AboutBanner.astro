@@ -41,6 +41,7 @@ const { title, subtitle, description, left_image, right_image, quote } = section
                   class="h-[300px] min-h-full w-full rounded-lg object-cover md:h-[600px] md:rounded-3xl"
                   src={left_image}
                   alt={`image related to ${title}`}
+                  title={`image related to ${title}`}
                 />
               </div>
             )
@@ -52,6 +53,7 @@ const { title, subtitle, description, left_image, right_image, quote } = section
                   class="h-[300px] w-full rounded-lg object-cover object-top md:h-[340px] md:rounded-3xl"
                   src={right_image}
                   alt={`image related to ${title}`}
+                  title={`image related to ${title}`}
                 />
               )
             }
@@ -63,6 +65,7 @@ const { title, subtitle, description, left_image, right_image, quote } = section
                       class="h-16 w-16 object-cover"
                       src={quote.avatar}
                       alt={`avatar related to ${quote.name}`}
+                      title={`avatar related to ${quote.name}`}
                     />
                     <div>
                       <h3
@@ -86,11 +89,13 @@ const { title, subtitle, description, left_image, right_image, quote } = section
                     class="pointer-events-none absolute left-1/2 top-6 h-[2px] w-[90%] -translate-x-1/2 object-cover"
                     src="/images/quote-line.png"
                     alt="quote"
+                    title="quote"
                   />
                   <ImageMod
                     class="pointer-events-none absolute -bottom-4 -right-4 h-36 w-40 object-contain"
                     src="/images/quote-bg-shape.png"
                     alt="quote"
+                    title="quote"
                   />
                 </div>
               )

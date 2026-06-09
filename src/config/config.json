@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Fortify",
-    "base_url": "https://fortify-astro.vercel.app",
+    "base_url": "https://pontora-marketing.vercel.app",
     "base_path": "/",
     "trailing_slash": true,
     "favicon": "/images/favicon.png",
