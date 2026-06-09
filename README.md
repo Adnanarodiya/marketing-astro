@@ -93,10 +93,3 @@ Add, remove, or modify links in the header navigation or footer section links in
 Update the primary, secondary, and tertiary theme colors or choose custom font stacks inside [src/config/theme.json](file:///d:/Office/pontora-marketing-website-/src/config/theme.json).
 
 ---
-
-## 🚢 Deployment
-
-The project is fully pre-configured for static site deployments:
-
-### Deploying to Vercel
-Standard routing redirection for sitemaps and Clean URLs are enabled via the root [vercel.json](file:///d:/Office/pontora-marketing-website-/vercel.json) file. Connect your GitHub repository to Vercel and it will build and deploy automatically on push.
