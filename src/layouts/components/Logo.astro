@@ -1,6 +1,7 @@
 ---
 import config from "@/config/config.json";
 import ImageMod from "./ImageMod.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const { src, srcDarkmode }: { src?: string; srcDarkmode?: string } =
   Astro.props;
@@ -19,9 +20,11 @@ const {
   logo_text: string;
   title: string;
 } = config.site;
+
+const locale = Astro.currentLocale || "de";
 ---
 
-<a href="/" class="navbar-brand inline-block" title={title}>
+<a href={getRelativeLocaleUrl(locale, "/")} class="navbar-brand inline-block" title={title}>
   {
     src || srcDarkmode || logo || logo_darkmode ? (
       <ImageMod

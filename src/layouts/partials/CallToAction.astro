@@ -1,12 +1,13 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import DynamicIcon from "@/helpers/DynamicIcon";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { content } = Astro.props;
 
-const defaultData = await getListPage("ctaSection", "call-to-action");
+const defaultData = await getListPage("ctaSection", `${locale}/call-to-action`);
 const sectionData = {
   data: {
     ...defaultData.data,

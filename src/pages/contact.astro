@@ -5,13 +5,14 @@ import CallToAction from "@/partials/CallToAction.astro";
 import ContactHero from "@/partials/ContactHero.astro";
 import Faq from "@/partials/Faq.astro";
 
+const locale = Astro.currentLocale || "de";
 const contactIndex = await getListPage(
   "contact",
-  "-index"
+  `${locale}/-index`
 );
 
 if (contactIndex.data.draft){
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
 ---
 

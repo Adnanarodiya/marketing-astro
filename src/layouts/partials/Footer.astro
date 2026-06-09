@@ -1,12 +1,16 @@
 ---
 import Logo from "@/components/Logo.astro";
 import Social from "@/components/Social.astro";
-import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "@/i18n/ui";
 
-const { footer_menu, footer_quick_links } = menu;
+const currentLocale = Astro.currentLocale || "de";
+const menuData = (menu as any)[currentLocale] || menu.de;
+const { footer_menu, footer_quick_links } = menuData;
+const t = useTranslations(currentLocale);
 
 // Function to replace {year} this from string to year
 function replaceYear(text: string) {
@@ -24,10 +28,10 @@ function replaceYear(text: string) {
           <Logo />
         </div>
         {
-          config.params.footer_description && (
+          t("footer.description") && (
             <p
               class="mb-6"
-              set:html={markdownify(config.params.footer_description)}
+              set:html={markdownify(t("footer.description"))}
             />
           )
         }
@@ -37,15 +41,15 @@ function replaceYear(text: string) {
           class="flex flex-wrap gap-y-6 sm:flex-nowrap md:justify-end lg:justify-around">
           <div class="w-[160px]">
             <h3 class="mb-4 pt-2 text-base text-text-dark md:mb-9">
-              Resources
+              {t("footer.resources")}
             </h3>
             <ul class="flex flex-col gap-3">
               {
-                footer_menu.map((item) => (
+                footer_menu.map((item: any) => (
                   <li>
                     <a
                       class="font-medium transition hover:text-tertiary"
-                      href={item.url}
+                      href={getRelativeLocaleUrl(currentLocale, item.url)}
                       title={item.name}>
                       {item.name}
                     </a>
@@ -56,15 +60,15 @@ function replaceYear(text: string) {
           </div>
           <div class="w-[160px]">
             <h3 class="mb-4 pt-2 text-base text-text-dark md:mb-9">
-              Quick Info
+              {t("footer.quick_info")}
             </h3>
             <ul class="flex flex-col gap-3">
               {
-                footer_quick_links.map((item) => (
+                footer_quick_links.map((item: any) => (
                   <li>
                     <a
                       class="font-medium transition hover:text-tertiary"
-                      href={item.url}
+                      href={getRelativeLocaleUrl(currentLocale, item.url)}
                       title={item.name}>
                       {item.name}
                     </a>
@@ -81,10 +85,10 @@ function replaceYear(text: string) {
 
     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
       {
-        config.params.copyright && (
+        t("footer.copyright") && (
           <div
             class="text-base text-text"
-            set:html={markdownify(replaceYear(config.params.copyright))}
+            set:html={markdownify(replaceYear(t("footer.copyright")))}
           />
         )
       }

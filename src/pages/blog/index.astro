@@ -7,15 +7,16 @@ import BlogSection from "@/partials/BlogSection.astro";
 import CallToAction from "@/partials/CallToAction.astro";
 
 const BLOG_FOLDER = "blog";
+const locale = Astro.currentLocale || "de";
 
 const postIndex = await getListPage(
   BLOG_FOLDER,
-  "-index"
+  `${locale}/-index`
 );
 if (postIndex.data.draft) {
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
-const posts = await getSinglePage(BLOG_FOLDER);
+const posts = (await getSinglePage(BLOG_FOLDER)).filter(post => post.id.startsWith(locale + "/"));
 const totalPages: number = Math.ceil(posts.length / config.settings.pagination);
 const { sections } = postIndex.data;
 ---
@@ -35,6 +36,7 @@ const { sections } = postIndex.data;
               content={section}
               visiblePosts={section.visible_posts}
               cardLayout={section.card_layout}
+              posts={posts}
             />
           );
         case "pagination":

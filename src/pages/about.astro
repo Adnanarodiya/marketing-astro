@@ -8,9 +8,10 @@ import Faq from "@/partials/Faq.astro";
 import OurTeam from "@/partials/OurTeam.astro";
 import OurValues from "@/partials/OurValues.astro";
 
-const aboutIndex = await getListPage("about", "-index");
+const locale = Astro.currentLocale || "de";
+const aboutIndex = await getListPage("about", `${locale}/-index`);
 if (aboutIndex.data.draft) {
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
 ---
 

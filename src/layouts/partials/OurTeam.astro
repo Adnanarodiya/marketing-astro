@@ -1,14 +1,12 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { content } = Astro.props;
 
-const sectionData = content ? { data: content } : await getListPage(
-  "ourTeamSection",
-  "our-team"
-);
+const sectionData = content ? { data: content } : await getListPage("ourTeamSection", `${locale}/our-team`);
 if(!sectionData.data.enable){
   return null;
 }

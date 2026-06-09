@@ -1,6 +1,7 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import DynamicIcon from "@/helpers/DynamicIcon";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -38,10 +39,7 @@ if (content) {
     }
   };
 } else {
-  sectionData = await getListPage(
-    "featuresSection",
-    "features"
-  );
+  sectionData = await getListPage("featuresSection", `${locale}/features`);
 }
 if(!sectionData.data.enable){
   return null;

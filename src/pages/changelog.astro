@@ -5,13 +5,14 @@ import CallToAction from "@/partials/CallToAction.astro";
 import ChangelogSection from "@/partials/ChangelogSection.astro";
 import FeaturesExplanation from "@/partials/FeaturesExplanation.astro";
 
+const locale = Astro.currentLocale || "de";
 const changelogIndex = await getListPage(
   "changelog",
-  "-index"
+  `${locale}/-index`
 );
 
 if (changelogIndex.data.draft){
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
 ---
 

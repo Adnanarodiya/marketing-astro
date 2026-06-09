@@ -1,6 +1,7 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import config from "@/config/config.json";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
@@ -12,7 +13,7 @@ let hero;
 if (content) {
   hero = content;
 } else {
-  const contactIndex = await getListPage("contact", "-index");
+  const contactIndex = await getListPage("contact", `${locale}/-index`);
   if (contactIndex.data.draft) {
     return Astro.redirect("/404");
   }

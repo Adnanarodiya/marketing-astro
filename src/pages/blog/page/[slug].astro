@@ -10,10 +10,11 @@ import CallToAction from "@/partials/CallToAction.astro";
 const BLOG_FOLDER = "blog";
 
 const { slug } = Astro.params;
-const posts = await getSinglePage(BLOG_FOLDER);
+const allPosts = await getSinglePage(BLOG_FOLDER);
+const posts = allPosts.filter((post) => post.id.startsWith("de/"));
 const postIndex = await getListPage(
   BLOG_FOLDER,
-  "-index"
+  "de/-index"
 );
 if (postIndex.data.draft) {
   return Astro.redirect("/404");
@@ -27,7 +28,8 @@ const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 
 export async function getStaticPaths() {
   const BLOG_FOLDER = "blog";
-  const posts = await getSinglePage(BLOG_FOLDER);
+  const allPosts = await getSinglePage(BLOG_FOLDER);
+  const posts = allPosts.filter((post) => post.id.startsWith("de/"));
   const totalPages = Math.ceil(posts.length / config.settings.pagination);
   const paths = [];
 

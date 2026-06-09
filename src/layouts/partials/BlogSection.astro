@@ -1,5 +1,6 @@
 ---
 import BlogCard from "@/components/BlogCard.astro";
+const locale = Astro.currentLocale || "de";
 import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -7,10 +8,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 let { content, largeHeading, visiblePosts, posts, cardLayout } = Astro.props;
 
 // Get default blog data from the "sections" content collection
-const sectionData = await getListPage(
-  "blogSection",
-  "blog"
-);
+const sectionData = await getListPage("blogSection", `${locale}/blog`);
 if(!sectionData.data.enable){
   return null;
 }
@@ -24,7 +22,7 @@ if (content) {
 const BLOG_FOLDER = "blog";
 
 // Get all blog posts from the specified folder if no posts are passed as props
-posts = posts ? posts : await getSinglePage(BLOG_FOLDER);
+posts = posts ? posts : (await getSinglePage(BLOG_FOLDER)).filter((post: any) => post.id.startsWith(locale + "/"));
 
 // Sort blog posts by date in descending order
 let sortedPosts = sortByDate(posts);

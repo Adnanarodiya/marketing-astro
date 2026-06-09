@@ -1,10 +1,11 @@
 ---
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { content } = Astro.props;
 
-const defaultData = await getListPage("faqSection", "faq");
+const defaultData = await getListPage("faqSection", `${locale}/faq`);
 const sectionData = {
   data: {
     ...defaultData.data,

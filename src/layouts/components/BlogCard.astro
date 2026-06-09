@@ -4,6 +4,8 @@ import DynamicIcon from "@/helpers/DynamicIcon";
 import dateFormat from "@/lib/utils/dateFormat";
 import { plainify } from "@/lib/utils/textConverter";
 import ImageMod from "./ImageMod.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "@/i18n/ui";
 
 const { summary_length, blog_folder } = config.settings;
 
@@ -13,6 +15,11 @@ const {
 } = Astro.props;
 
 const { title, image, date } = data;
+
+const locale = Astro.currentLocale || "de";
+const t = useTranslations(locale);
+const cleanId = id.replace(/^(de|en)\//, "");
+const postUrl = getRelativeLocaleUrl(locale, `/${blog_folder}/${cleanId}/`);
 ---
 
 <div class="bg-body">
@@ -48,7 +55,7 @@ const { title, image, date } = data;
           title="date icon"
         />
         <p class="inline-block font-medium text-tertiary">
-          {dateFormat(date, "iiii, MMM dd, yyyy")}
+          {dateFormat(date, "iiii, MMM dd, yyyy", locale)}
         </p>
       </div>
     )
@@ -56,7 +63,7 @@ const { title, image, date } = data;
   {
     title && (
       <h3 class="h5 mb-3">
-        <a href={`/${blog_folder}/${id}/`} title={title}>{title}</a>
+        <a href={postUrl} title={title}>{title}</a>
       </h3>
     )
   }
@@ -65,8 +72,8 @@ const { title, image, date } = data;
       <p class="mb-6">{plainify(body?.slice(0, Number(summary_length)))}</p>
     )
   }
-  <a class="btn btn-text" href={`/${blog_folder}/${id}/`} title="Read More">
-    Read More
+  <a class="btn btn-text" href={postUrl} title={t("read_more")}>
+    {t("read_more")}
     <div class="icon-wrapper">
       <span class="icon">
         <DynamicIcon className="w-4" icon={"FaArrowRight"} />

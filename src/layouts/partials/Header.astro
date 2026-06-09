@@ -3,8 +3,8 @@ import ImageMod from "@/components/ImageMod.astro";
 import Logo from "@/components/Logo.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
-import DynamicIcon from "@/helpers/DynamicIcon";
 import HomeBanner from "./HomeBanner.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 export interface ChildNavigationLink {
   name: string;
@@ -20,15 +20,29 @@ export interface NavigationLink {
 
 const { banner, bannerData, errorPage } = Astro.props;
 
-const { main }: { main: NavigationLink[] } = menu;
+const currentLocale = Astro.currentLocale || "de";
+const menuData = (menu as any)[currentLocale] || menu.de;
+const { main }: { main: NavigationLink[] } = menuData;
 const { navigation_buttons } = config;
 const { pathname } = Astro.url;
 
 const cleanPath = (u: string) => u.replace(/\/$/, "");
+
+// Calculate alternative language path
+let otherLocaleUrl = Astro.url.pathname;
+if (currentLocale === "de") {
+  const pathClean = Astro.url.pathname.replace(/\/$/, "");
+  otherLocaleUrl = `/en${pathClean || ""}/`;
+} else {
+  otherLocaleUrl = Astro.url.pathname.replace(/^\/en/, "") || "/";
+}
+if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
+  otherLocaleUrl = otherLocaleUrl.replace(/\/$/, "");
+}
 ---
 
 <div
-  class={`header-wrapper ${Astro.url.pathname === "/" ? "relative" : !errorPage && "pb-6"}`}>
+  class={`header-wrapper ${Astro.url.pathname === "/" || Astro.url.pathname === "/en/" ? "relative" : !errorPage && "pb-6"}`}>
   <header class="header relative">
     <nav class="navbar container relative z-10">
       <!-- logo -->
@@ -70,7 +84,7 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
                   <span
                     class={`nav-link flex items-center ${
                       menu.children
-                        ?.map(({ url }) => cleanPath(url))
+                        ?.map(({ url }) => cleanPath(getRelativeLocaleUrl(currentLocale, url)))
                         .includes(cleanPath(pathname))
                         ? "active"
                         : ""
@@ -86,11 +100,11 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
                     {menu.children?.map((child) => (
                       <li class="nav-dropdown-item">
                         <a
-                          href={child.url}
+                          href={getRelativeLocaleUrl(currentLocale, child.url)}
                           aria-label={child.name}
                           title={child.name}
                           class={`nav-dropdown-link block ${
-                            cleanPath(pathname) === cleanPath(child.url) &&
+                            cleanPath(pathname) === cleanPath(getRelativeLocaleUrl(currentLocale, child.url)) &&
                             "active"
                           }`}>
                           {child.name}
@@ -102,10 +116,10 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
               ) : (
                 <li class="nav-item">
                   <a
-                    href={menu.url}
+                    href={getRelativeLocaleUrl(currentLocale, menu.url)}
                     title={menu.name}
                     class={`nav-link flex items-center ${
-                      cleanPath(pathname) === cleanPath(menu.url) && "active"
+                      cleanPath(pathname) === cleanPath(getRelativeLocaleUrl(currentLocale, menu.url)) && "active"
                     }`}>
                     {menu.name}
                   </a>
@@ -114,6 +128,52 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
             </>
           ))
         }
+
+        {/* Mobile Language Switcher */}
+        <li class="nav-item nav-dropdown group relative mt-4 lg:hidden">
+          <span class="nav-link flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2">
+              <img
+                src={currentLocale === "de" ? "https://flagcdn.com/de.svg" : "https://flagcdn.com/gb.svg"}
+                class="h-4 w-4 rounded-full object-cover"
+                alt="flag"
+              />
+              {currentLocale === "de" ? "Deutsch (DE)" : "English (EN)"}
+            </span>
+            <span class="arrow-icon">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+          </span>
+          <ul class="nav-dropdown-list max-lg:hidden">
+            <li class="nav-dropdown-item">
+              <a
+                href={currentLocale === "de" ? "#" : otherLocaleUrl}
+                class={`nav-dropdown-link flex items-center gap-2 ${currentLocale === "de" && "active font-bold pointer-events-none"}`}>
+                <img
+                  src="https://flagcdn.com/de.svg"
+                  class="h-3.5 w-3.5 rounded-full object-cover"
+                  alt="de flag"
+                />
+                Deutsch (DE)
+              </a>
+            </li>
+            <li class="nav-dropdown-item">
+              <a
+                href={currentLocale === "en" ? "#" : otherLocaleUrl}
+                class={`nav-dropdown-link flex items-center gap-2 ${currentLocale === "en" && "active font-bold pointer-events-none"}`}>
+                <img
+                  src="https://flagcdn.com/gb.svg"
+                  class="h-3.5 w-3.5 rounded-full object-cover"
+                  alt="gb flag"
+                />
+                English (EN)
+              </a>
+            </li>
+          </ul>
+        </li>
+
         {
           navigation_buttons.dashboard?.enable && (
             <a
@@ -131,6 +191,49 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
         }
       </ul>
       <div class="order-1 ml-auto flex items-center gap-3 md:order-2 lg:ml-0">
+        {/* Desktop Language Switcher */}
+        <div class="nav-item nav-dropdown group relative hidden lg:block z-50">
+          <span class="nav-link flex items-center gap-1.5 cursor-pointer text-text hover:text-tertiary px-3 py-2 font-medium transition">
+            <img
+              src={currentLocale === "de" ? "https://flagcdn.com/de.svg" : "https://flagcdn.com/gb.svg"}
+              class="h-4 w-4 rounded-full object-cover"
+              alt="flag"
+            />
+            {currentLocale.toUpperCase()}
+            <span class="arrow-icon transition-transform duration-300 group-hover:rotate-180">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </span>
+          </span>
+          <ul class="nav-dropdown-list lg:invisible lg:absolute lg:right-0 lg:translate-y-1 lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:block lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+            <li class="nav-dropdown-item">
+              <a
+                href={currentLocale === "de" ? "#" : otherLocaleUrl}
+                class={`nav-dropdown-link flex items-center gap-2 ${currentLocale === "de" && "active font-bold pointer-events-none"}`}>
+                <img
+                  src="https://flagcdn.com/de.svg"
+                  class="h-3.5 w-3.5 rounded-full object-cover"
+                  alt="de flag"
+                />
+                Deutsch (DE)
+              </a>
+            </li>
+            <li class="nav-dropdown-item">
+              <a
+                href={currentLocale === "en" ? "#" : otherLocaleUrl}
+                class={`nav-dropdown-link flex items-center gap-2 ${currentLocale === "en" && "active font-bold pointer-events-none"}`}>
+                <img
+                  src="https://flagcdn.com/gb.svg"
+                  class="h-3.5 w-3.5 rounded-full object-cover"
+                  alt="gb flag"
+                />
+                English (EN)
+              </a>
+            </li>
+          </ul>
+        </div>
+
         {
           navigation_buttons.dashboard?.enable && (
             <a
@@ -156,7 +259,7 @@ const cleanPath = (u: string) => u.replace(/\/$/, "");
   <div aria-hidden="true">
     <ImageMod
       class="pointer-events-none absolute top-0 -z-10 h-full w-full object-cover object-top"
-      src={Astro.url.pathname === "/"
+      src={Astro.url.pathname === "/" || Astro.url.pathname === "/en/"
         ? "/images/banner-bg.png"
         : "/images/page-header.png"}
       alt="header image"

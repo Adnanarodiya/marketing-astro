@@ -4,13 +4,14 @@ import { getListPage } from "@/lib/contentParser.astro";
 import CallToAction from "@/partials/CallToAction.astro";
 import Testimonial from "@/partials/Testimonial.astro";
 
+const locale = Astro.currentLocale || "de";
 const review = await getListPage(
   "review",
-  "-index"
+  `${locale}/-index`
 );
 
 if (review.data.draft) {
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
 const { testimonial } = review.data;
 ---

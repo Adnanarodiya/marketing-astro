@@ -7,9 +7,10 @@ import FeaturesExplanation from "@/partials/FeaturesExplanation.astro";
 import CallToAction from "@/partials/CallToAction.astro";
 import HowItWorks from "@/partials/HowItWorks.astro";
 
-const features = await getListPage("features", "-index");
+const locale = Astro.currentLocale || "de";
+const features = await getListPage("features", `${locale}/-index`);
 if (features.data.draft) {
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
 
 const { sections } = features.data;

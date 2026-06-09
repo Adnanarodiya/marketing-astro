@@ -1,6 +1,7 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import DynamicIcon from "@/helpers/DynamicIcon";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 const { content } = Astro.props;
@@ -22,14 +23,14 @@ if (content) {
     }
   };
 } else {
-  sectionData = await getListPage("howItWorksSection", "how-it-works");
+  sectionData = await getListPage("howItWorksSection", `${locale}/how-it-works`);
 }
 
 if(!sectionData.data.enable){
   return null;
 }
 
-const { title, subtitle, description, list, button } = sectionData.data;
+const { title, subtitle, description, list, button } = sectionData.data as any;
 ---
 
 <section class="section">
@@ -54,7 +55,7 @@ const { title, subtitle, description, list, button } = sectionData.data;
       <div class="col-12 pt-20">
         <div class="row g-4 justify-center">
           {
-            list?.map((item, index) => (
+            list?.map((item: any, index: number) => (
               <div
                 class="md:col-6 lg:col-4"
                 data-aos="fade-up-sm"

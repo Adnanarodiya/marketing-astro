@@ -8,6 +8,7 @@ import BlogSection from "./partials/BlogSection.astro";
 import CallToAction from "./partials/CallToAction.astro";
 
 const { post } = Astro.props;
+const locale = Astro.currentLocale || "de";
 
 const { body } = post;
 const { Content } = await render(post);
@@ -61,7 +62,7 @@ const sections = post.data.sections || [
                         title="date icon"
                       />
                       <p class="inline-block font-medium text-tertiary">
-                        {dateFormat(date, "iiii, MMM dd, yyyy")}
+                        {dateFormat(date, "iiii, MMM dd, yyyy", locale)}
                       </p>
                     </li>
                   </ul>

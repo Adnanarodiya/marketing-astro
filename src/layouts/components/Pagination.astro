@@ -1,4 +1,8 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
+const locale = Astro.currentLocale || "de";
+const getLocaleUrl = (path: string) => getRelativeLocaleUrl(locale, path);
+
 type Pagination = {
   section?: string;
   currentPage?: number;
@@ -26,8 +30,8 @@ for (let i = 1; i <= totalPages; i++) {
         <a
           href={
             indexPageLink
-              ? `${section ? "/" + section : "/"}/`
-              : `${section ? "/" + section : ""}/page/${currentPage - 1}/`
+              ? getLocaleUrl(section ? "/" + section : "/")
+              : getLocaleUrl(section ? "/" + section + "/page/" + (currentPage - 1) : "/page/" + (currentPage - 1))
           }
           title="Go to previous page"
           class="px-2 py-2 text-text-dark transition-colors duration-300 hover:bg-light rounded-md">
@@ -75,8 +79,8 @@ for (let i = 1; i <= totalPages; i++) {
           <a
             href={
               i === 0
-                ? `${section ? "/" + section : "/"}/`
-                : `${section ? "/" + section : ""}/page/${pagination}/`
+                ? getLocaleUrl(section ? "/" + section : "/")
+                : getLocaleUrl(section ? "/" + section + "/page/" + pagination : "/page/" + pagination)
             }
             aria-current="page"
             title={`Go to page ${pagination}`}
@@ -89,7 +93,7 @@ for (let i = 1; i <= totalPages; i++) {
       {/* next page */}
       {hasNextPage ? (
         <a
-          href={`${section ? "/" + section : ""}/page/${currentPage + 1}/`}
+          href={getLocaleUrl(section ? "/" + section + "/page/" + (currentPage + 1) : "/page/" + (currentPage + 1))}
           title="Go to next page"
           class="px-2 py-2 text-text-dark transition-colors duration-300 hover:bg-light rounded-md">
           <span class="sr-only">Next</span>

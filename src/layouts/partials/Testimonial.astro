@@ -1,12 +1,13 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import DynamicIcon from "@/helpers/DynamicIcon";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { content, visible_testimonial, largeHeading } = Astro.props;
 
-const sectionData = await getListPage("testimonialSection", "testimonial");
+const sectionData = await getListPage("testimonialSection", `${locale}/testimonial`);
 if (!sectionData.data.enable){
   return null;
 }

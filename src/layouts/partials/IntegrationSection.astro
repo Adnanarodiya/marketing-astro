@@ -1,13 +1,11 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import DynamicIcon from "@/helpers/DynamicIcon";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const sectionData = await getListPage(
-  "integrationSection",
-  "integration"
-);
+const sectionData = await getListPage("integrationSection", `${locale}/integration`);
 if(!sectionData.data.enable){
   return null;
 }

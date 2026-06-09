@@ -1,11 +1,12 @@
 ---
 import DynamicIcon from "@/helpers/DynamicIcon";
+const locale = Astro.currentLocale || "de";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { largeHeading, content } = Astro.props;
 
-const sectionData = await getListPage("pricingSection", "pricing");
+const sectionData = await getListPage("pricingSection", `${locale}/pricing`);
 if (!sectionData.data.enable) {
   return null;
 }

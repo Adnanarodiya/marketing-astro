@@ -7,12 +7,13 @@ import Faq from "@/partials/Faq.astro";
 import PricingSection from "@/partials/PricingSection.astro";
 import Testimonial from "@/partials/Testimonial.astro";
 
+const locale = Astro.currentLocale || "de";
 const pricing = await getListPage(
   "pricing",
-  "-index"
+  `${locale}/-index`
 );
 if(pricing.data.draft){
-  return Astro.redirect("/404");
+  return Astro.redirect(locale === "en" ? "/en/404" : "/404");
 }
 const { sections } = pricing.data;
 ---

@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 export const aboutBannerSection = defineCollection({
   loader: glob({
-    pattern: "about-banner.{md,mdx}",
+    pattern: "**/about-banner.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -25,7 +25,7 @@ export const aboutBannerSection = defineCollection({
 
 export const blogSection = defineCollection({
   loader: glob({
-    pattern: "blog.{md,mdx}",
+    pattern: "**/blog.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -38,7 +38,7 @@ export const blogSection = defineCollection({
 
 export const ctaSection = defineCollection({
   loader: glob({
-    pattern: "call-to-action.{md,mdx}",
+    pattern: "**/call-to-action.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -56,7 +56,7 @@ export const ctaSection = defineCollection({
 
 export const changelogSection = defineCollection({
   loader: glob({
-    pattern: "changelog.{md,mdx}",
+    pattern: "**/changelog.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -79,7 +79,7 @@ export const changelogSection = defineCollection({
 
 export const clientsSection = defineCollection({
   loader: glob({
-    pattern: "clients.{md,mdx}",
+    pattern: "**/clients.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -91,7 +91,7 @@ export const clientsSection = defineCollection({
 
 export const faqSection = defineCollection({
   loader: glob({
-    pattern: "faq.{md,mdx}",
+    pattern: "**/faq.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -111,7 +111,7 @@ export const faqSection = defineCollection({
 
 export const featuresExplanationSection = defineCollection({
   loader: glob({
-    pattern: "features-explanation.{md,mdx}",
+    pattern: "**/features-explanation.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -135,7 +135,7 @@ export const featuresExplanationSection = defineCollection({
 
 export const featuresGridSection = defineCollection({
   loader: glob({
-    pattern: "features-grid.{md,mdx}",
+    pattern: "**/features-grid.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -162,7 +162,7 @@ export const featuresGridSection = defineCollection({
 
 export const featuresSection = defineCollection({
   loader: glob({
-    pattern: "features.{md,mdx}",
+    pattern: "**/features.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -207,7 +207,7 @@ export const featuresSection = defineCollection({
 
 export const homeBannerSection = defineCollection({
   loader: glob({
-    pattern: "home-banner.{md,mdx}",
+    pattern: "**/home-banner.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -234,7 +234,7 @@ export const homeBannerSection = defineCollection({
 
 export const howItWorksSection = defineCollection({
   loader: glob({
-    pattern: "how-it-works.{md,mdx}",
+    pattern: "**/how-it-works.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -254,7 +254,7 @@ export const howItWorksSection = defineCollection({
 
 export const integrationSection = defineCollection({
   loader: glob({
-    pattern: "integration.{md,mdx}",
+    pattern: "**/integration.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -280,7 +280,7 @@ export const integrationSection = defineCollection({
 
 export const ourTeamSection = defineCollection({
   loader: glob({
-    pattern: "our-team.{md,mdx}",
+    pattern: "**/our-team.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -300,7 +300,7 @@ export const ourTeamSection = defineCollection({
 
 export const ourValuesSection = defineCollection({
   loader: glob({
-    pattern: "our-values.{md,mdx}",
+    pattern: "**/our-values.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -326,7 +326,7 @@ export const ourValuesSection = defineCollection({
 
 export const pricingSection = defineCollection({
   loader: glob({
-    pattern: "pricing.{md,mdx}",
+    pattern: "**/pricing.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
@@ -361,7 +361,7 @@ export const pricingSection = defineCollection({
 
 export const testimonialSection = defineCollection({
   loader: glob({
-    pattern: "testimonial.{md,mdx}",
+    pattern: "**/testimonial.{md,mdx}",
     base: "src/content/sections",
   }),
   schema: z.object({
