@@ -15,19 +15,35 @@ const postIndex = await getListPage(
 if (postIndex.data.draft) {
   return Astro.redirect("/404");
 }
-const headingContent = postIndex.data.hero;
 const posts = await getSinglePage(BLOG_FOLDER);
 const totalPages: number = Math.ceil(posts.length / config.settings.pagination);
+const { sections } = postIndex.data;
 ---
 
 <Base {...postIndex.data}>
-  <BlogSection
-    largeHeading={true}
-    content={headingContent}
-    visiblePosts={2}
-    cardLayout="creative"
-  />
-  <BlogSection visiblePosts={3} />
-  <Pagination section={BLOG_FOLDER} totalPages={totalPages} />
-  <CallToAction />
+  {
+    sections?.map((section) => {
+      if (section.enable === false) {
+        return null;
+      }
+
+      switch (section.type) {
+        case "blog_section":
+          return (
+            <BlogSection
+              largeHeading={section.large_heading}
+              content={section}
+              visiblePosts={section.visible_posts}
+              cardLayout={section.card_layout}
+            />
+          );
+        case "pagination":
+          return <Pagination section={BLOG_FOLDER} totalPages={totalPages} />;
+        case "page_cta":
+          return <CallToAction content={section} />;
+        default:
+          return null;
+      }
+    })
+  }
 </Base>

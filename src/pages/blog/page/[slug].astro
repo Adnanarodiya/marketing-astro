@@ -40,14 +40,42 @@ export async function getStaticPaths() {
   }
   return paths;
 }
+const { sections } = postIndex.data;
 ---
 
 <Base {...postIndex.data}>
-  <BlogSection visiblePosts={3} posts={currentPosts} />
-  <Pagination
-    section={BLOG_FOLDER}
-    currentPage={currentPage}
-    totalPages={totalPages}
-  />
-  <CallToAction />
+  {
+    sections?.map((section) => {
+      if (section.enable === false) {
+        return null;
+      }
+
+      switch (section.type) {
+        case "blog_section":
+          if (section.card_layout === "creative") {
+            return null;
+          }
+          return (
+            <BlogSection
+              largeHeading={section.large_heading}
+              content={section}
+              visiblePosts={section.visible_posts}
+              posts={currentPosts}
+            />
+          );
+        case "pagination":
+          return (
+            <Pagination
+              section={BLOG_FOLDER}
+              currentPage={currentPage}
+              totalPages={totalPages}
+            />
+          );
+        case "page_cta":
+          return <CallToAction content={section} />;
+        default:
+          return null;
+      }
+    })
+  }
 </Base>

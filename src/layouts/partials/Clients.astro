@@ -3,18 +3,14 @@ import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
 const { content } = Astro.props;
-let sectionData;
-if (content) {
-  sectionData = {
-    data: {
-      enable: content.enable !== false,
-      title: content.title,
-      list: content.list || content.items?.map((item: any) => item.image || item) || [],
-    }
-  };
-} else {
-  sectionData = await getListPage("clientsSection", "clients");
-}
+
+const defaultData = await getListPage("clientsSection", "clients");
+const sectionData = {
+  data: {
+    ...defaultData.data,
+    ...(content || {})
+  }
+};
 
 if(!sectionData.data.enable){
   return null;
@@ -38,7 +34,7 @@ const { title, list } = sectionData.data;
         <div
           class="flex justify-center gap-x-12 gap-y-6 grayscale opacity-50 max-lg:flex-wrap">
           {
-            list?.map((logo) => (
+            list?.map((logo: any) => (
               <div class="flex aspect-[3.125/1] w-36 items-center">
                 <img src={logo} alt="brand logo" height="120" />
               </div>

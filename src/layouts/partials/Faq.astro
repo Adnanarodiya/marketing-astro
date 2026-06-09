@@ -2,7 +2,18 @@
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const sectionData = await getListPage("faqSection", "faq");
+const { content } = Astro.props;
+
+const defaultData = await getListPage("faqSection", "faq");
+const sectionData = {
+  data: {
+    ...defaultData.data,
+    ...(content || {})
+  }
+};
+if(!sectionData.data.enable){
+  return null;
+}
 const { title, subtitle, description, list } = sectionData.data;
 ---
 
@@ -26,7 +37,7 @@ const { title, subtitle, description, list } = sectionData.data;
           </div>
           <div class="col-12 pt-20" data-aos="fade-up-sm" data-aos-delay={100}>
             <div class="row g-4 justify-center">
-              {list?.map((item, index) => (
+              {list?.map((item: any, index: number) => (
                 <div class="lg:col-10">
                   <div class={item.active ? "accordion active" : "accordion"}>
                     {item.title && (

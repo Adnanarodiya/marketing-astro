@@ -23,25 +23,7 @@ export const authors = defineCollection({
   }),
 });
 
-export const blog = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: "src/content/blog",
-  }),
-  schema: z.object({
-   ...commonFields,
-    hero: z
-      .object({
-        subtitle: z.string(),
-        title: z.string(),
-        description: z.string(),
-      })
-      .optional(),
-    categories: z.array(z.string()).optional(),
-    author: z.string().optional(),
-    tags: z.array(z.string()).optional(),
-  }),
-});
+
 
 export const changelog = defineCollection({
   loader: glob({
@@ -316,6 +298,27 @@ const contactHeroSchema = z.object({
   ).optional(),
 });
 
+const blogSectionSchema = z.object({
+  type: z.literal("blog_section"),
+  enable: z.boolean().optional(),
+  title: z.string().optional(),
+  subtitle: z.string().optional(),
+  description: z.string().optional(),
+  visible_posts: z.number().optional(),
+  card_layout: z.string().optional(),
+  large_heading: z.boolean().optional(),
+});
+
+const paginationSchema = z.object({
+  type: z.literal("pagination"),
+  enable: z.boolean().optional(),
+});
+
+const blogSingleContentSchema = z.object({
+  type: z.literal("blog_single_content"),
+  enable: z.boolean().optional(),
+});
+
 const sectionSchema = z.discriminatedUnion("type", [
   bannerSchema,
   clientsSchema,
@@ -331,6 +334,9 @@ const sectionSchema = z.discriminatedUnion("type", [
   ourValuesSchema,
   ourTeamSchema,
   contactHeroSchema,
+  blogSectionSchema,
+  paginationSchema,
+  blogSingleContentSchema,
 ]);
 
 export const about = defineCollection({
@@ -363,6 +369,27 @@ export const pricing = defineCollection({
   schema: z.object({
     ...commonFields,
     sections: z.array(sectionSchema),
+  }),
+});
+
+export const blog = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "src/content/blog",
+  }),
+  schema: z.object({
+    ...commonFields,
+    hero: z
+      .object({
+        subtitle: z.string(),
+        title: z.string(),
+        description: z.string(),
+      })
+      .optional(),
+    categories: z.array(z.string()).optional(),
+    author: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    sections: z.array(sectionSchema).optional(),
   }),
 });
 

@@ -6,26 +6,46 @@ image: ""
 draft: false
 ---
 
-#### Responsibility of Contributors
+# Legal Notice (Imprint)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
+## Company Information
 
-pretium, aliquam sit. Praesent elementum magna amet, tincidunt eros, nibh in leo. Malesuada purus, lacus, at aliquam suspendisse tempus. Quis tempus amet, velit nascetur sollicitudin. At sollicitudin eget amet in. Eu velit nascetur sollicitudin erhdfvssfvrgss eget viverra nec elementum. Lacus, facilisis tristique lectus in.
+**Haus der Finanzen GmbH**
+Freiburgstrasse 443
+3018 Bern
+Switzerland
 
-#### Gathering of Personal Information
+## Contact Information
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
+**Phone:** +41 31 317 64 66
+**Email:** [info@hdf.ch](mailto:info@hdf.ch)
+**Website:** [www.hdf.ch](http://www.hdf.ch)
 
-#### Protection of Personal- Information
+## Commercial Register Information
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus.
+**Registered Company Name:** Haus der Finanzen GmbH
+**Business Identification Number (UID):** CHE-462.314.248
+**Legal Form:** Limited Liability Company (GmbH)
+**Commercial Register Office:** Canton of Bern
 
-Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat
+## Value Added Tax (VAT)
 
-#### Privacy Policy Changes
+**VAT Number:** CHE-462.314.248 VAT
 
-1. Sll the Themefisher items are designed to be with the latest , We check all
-2. comments that threaten or harm the reputation of any person or organization
-3. personal information including, but limited to, email addresses, telephone numbers
-4. Any Update come in The technology Customer will get automatic Notification.
+## Disclaimer
+
+The author assumes no responsibility for the correctness, accuracy, timeliness, reliability, or completeness of the information provided.
+
+Liability claims against the author for material or immaterial damages resulting from access to, use or non-use of the published information, misuse of the connection, or technical faults are excluded.
+
+All offers are non-binding. The author expressly reserves the right to modify, supplement, delete, or temporarily or permanently discontinue parts of the website or the entire offering without prior notice.
+
+## Liability for Links
+
+References and links to third-party websites are outside our area of responsibility. Any responsibility for such websites is rejected. Access to and use of such websites are at the user's own risk.
+
+## Copyright
+
+The copyright and all other rights to content, images, photographs, or other files on this website belong exclusively to Haus der Finanzen GmbH or the specifically named rights holders.
+
+Any reproduction of elements from this website requires the prior written consent of the copyright holders.

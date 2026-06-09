@@ -6,10 +6,13 @@ import { markdownify } from "@/lib/utils/textConverter";
 
 const { content } = Astro.props;
 
-const sectionData = content ? { data: content } : await getListPage(
-  "ctaSection",
-  "call-to-action"
-);
+const defaultData = await getListPage("ctaSection", "call-to-action");
+const sectionData = {
+  data: {
+    ...defaultData.data,
+    ...(content || {})
+  }
+};
 if(!sectionData.data.enable){
   return null;
 }

@@ -170,18 +170,19 @@
 .content {
   @apply prose max-w-none;
   @apply prose-headings:mb-[.5em] prose-headings:mt-[1em] prose-headings:font-medium prose-headings:text-text-dark;
-  @apply prose-h1:text-h1-sm;
-  @apply prose-h2:text-h2-sm;
-  @apply prose-h3:text-h3-sm;
+  @apply prose-h1:text-h3;
+  @apply prose-h2:text-h4;
+  @apply prose-h3:text-h5;
+  @apply prose-h4:text-h6;
   @apply prose-img:max-w-full prose-img:rounded-3xl;
   @apply prose-hr:border-border;
-  @apply prose-p:text-lg/[inherit] prose-p:text-text;
-  @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-tertiary prose-blockquote:bg-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-2xl prose-blockquote:not-italic prose-blockquote:text-text-dark;
+  @apply prose-p:text-base prose-p:text-text;
+  @apply prose-blockquote:rounded-lg prose-blockquote:border prose-blockquote:border-l-[10px] prose-blockquote:border-tertiary prose-blockquote:bg-light prose-blockquote:px-8 prose-blockquote:py-10 prose-blockquote:font-secondary prose-blockquote:text-xl prose-blockquote:not-italic prose-blockquote:text-text-dark;
   @apply prose-pre:rounded-lg prose-pre:bg-light;
   @apply prose-code:px-1 prose-code:text-primary;
   @apply prose-strong:text-text-dark;
   @apply prose-a:text-text prose-a:underline hover:prose-a:text-primary;
-  @apply prose-li:text-text;
+  @apply prose-li:text-base prose-li:text-text;
   @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:border-border prose-table:before:content-[""];
   @apply prose-thead:border-border prose-thead:bg-light;
   @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-text-dark;
