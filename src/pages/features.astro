@@ -1,22 +1,41 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
-import CallToAction from "@/partials/CallToAction.astro";
-import FeaturesSection from "@/partials/FeatureSection.astro";
 import FeaturesGrid from "@/partials/FeaturesGrid.astro";
+import FeatureSection from "@/partials/FeatureSection.astro";
+import FeaturesExplanation from "@/partials/FeaturesExplanation.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import HowItWorks from "@/partials/HowItWorks.astro";
 
-const features = await getListPage(
-  "features",
-  "-index"
-);
-if(features.data.draft){
+const features = await getListPage("features", "-index");
+if (features.data.draft) {
   return Astro.redirect("/404");
 }
-const { hero } = features.data;
+
+const { sections } = features.data;
 ---
 
 <Base {...features.data}>
-  <FeaturesGrid content={hero} largeHeading />
-  <FeaturesSection />
-  <CallToAction />
+  {
+    sections?.map((section) => {
+      if (section.enable === false) {
+        return null;
+      }
+
+      switch (section.type) {
+        case "features_grid":
+          return <FeaturesGrid content={section} largeHeading />;
+        case "features_section":
+          return <FeatureSection content={section} />;
+        case "features_explanation":
+          return <FeaturesExplanation content={section} />;
+        case "how_it_works":
+          return <HowItWorks content={section} />;
+        case "page_cta":
+          return <CallToAction content={section} />;
+        default:
+          return null;
+      }
+    })
+  }
 </Base>

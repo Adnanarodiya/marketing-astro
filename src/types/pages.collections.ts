@@ -36,20 +36,7 @@ export const changelog = defineCollection({
 });
 
 
-export const features = defineCollection({
-  loader: glob({
-    pattern: "**/-*.{md,mdx}",
-    base: "src/content/features",
-  }),
-  schema: z.object({
-    ...commonFields,
-    hero: z.object({
-      subtitle: z.string(),
-      title: z.string(),
-      description: z.string(),
-    }),
-  }),
-});
+
 
 export const integration = defineCollection({
   loader: glob({
@@ -404,6 +391,17 @@ export const homepage = defineCollection({
     meta_title: z.string().optional(),
     keywords: z.string().optional(),
     draft: z.boolean(),
+    sections: z.array(sectionSchema),
+  }),
+});
+
+export const features = defineCollection({
+  loader: glob({
+    pattern: "**/-*.{md,mdx}",
+    base: "src/content/features",
+  }),
+  schema: z.object({
+    ...commonFields,
     sections: z.array(sectionSchema),
   }),
 });

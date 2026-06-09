@@ -1,16 +1,16 @@
 ---
 enable: true
 subtitle: "How it Works"
-title: "How Fortify Security Solution Works"
-description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+title: "How Pontora Streamlines Administration"
+description: Connecting company admins, employees, and external trustees on a single platform to eliminate scattered email threads and spreadsheets.
 list:
-  - icon: "/images/icons/svg/detection.svg" # get outline svg icons from here - https://www.svgrepo.com/vectors/security/outlined/
-    title: "Advanced Detection"
-    description: Our system continuously monitors your network and data environments for any suspicious activities.
-  - icon: "/images/icons/svg/encryption.svg" # get outline svg icons from here - https://www.svgrepo.com/vectors/security/outlined/
-    title: "Robust Data Encryption"
-    description: We ensure that all sensitive data is encrypted and at rest, using industry-standard encryption protocols.
-  - icon: "/images/icons/svg/time.svg" # get outline svg icons from here - https://www.svgrepo.com/vectors/security/outlined/
-    title: "Automated Response"
-    description: In the event of a security incident, our automated response system takes immediate action.
+  - icon: "/images/icons/svg/detection.svg"
+    title: "Workspace Setup"
+    description: Set up companies, define operating locations, and assign users to role-specific workspaces.
+  - icon: "/images/icons/svg/encryption.svg"
+    title: "Daily Administration"
+    description: Track working hours, generate documents, submit custom forms, and upload invoices on the fly.
+  - icon: "/images/icons/svg/time.svg"
+    title: "Trustee Collaboration"
+    description: External trustee firms review financial logs and handle client approval requests directly.
 ---

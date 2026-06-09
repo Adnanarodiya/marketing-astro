@@ -2,50 +2,50 @@
 enable: true
 subtitle: "12,000+ Happy Customers"
 title: Customer Reviews
-description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+description: See how companies, site managers, and trustee firms collaborate efficiently on Pontora.
 
 # Testimonials
 list:
   - name: "Michael Brown"
-    designation: "IT Director at HealthCare"
+    designation: "COO at Gastro Group"
     avatar: "/images/avatar/1.png"
     content: |
-      **Implementing this data security solution has been a game-changer for our company.**
+      **Implementing Pontora has been a game-changer for our multi-location restaurant operations.**
 
-      The real-time threat detection and automated response features have significantly reduced our risk exposure. We now feel more confident than ever about our data security posture.
+      The daily sales logs and scoped site manager permissions make location tracking completely painless. Our managers now log reports directly into the workspace.
   - name: "Jane Smith"
-    designation: "CTO at Tech Innovators Inc."
+    designation: "CEO at Prime Services"
     avatar: "/images/avatar/2.jpg"
     content: |
-      **The granular access controls and detailed user activity tracking have given us unparalleled visibility.**
+      **The direct trustee collaboration features have given us unparalleled efficiency.**
 
-      The granular access controls and detailed user activity tracking have given us unparalleled visibility into our system's security. This platform has helped us maintain our data.
+      Our accounting documents, timesheets, and leave approvals move straight to our trustee workspace without email loops. The platform has helped us maintain clean records.
   - name: "Marvin Brown"
-    designation: "COO at Financial Services Group"
+    designation: "Managing Partner at Apex Trustees"
     avatar: "/images/avatar/3.jpg"
     content: |
-      **The comprehensive risk analysis and impact visualization tools are exceptional.**
+      **Managing client companies has never been easier.**
 
-      The comprehensive risk analysis and impact visualization tools are exceptional. We can quickly identify and mitigate potential threats before they become serious issues.
+      Scoped client assignments and approvals within the Trustee Workspace allow our team to support client firms securely and transparently. Audit trails are exceptional.
   - name: "Smith Lee"
-    designation: "IT Director at HealthCare"
+    designation: "Director at Retail Chain"
     avatar: "/images/avatar/4.png"
     content: |
-      **Implementing this data security solution has been a game-changer for our company.**
+      **The timesheets and holiday planning modules are extremely simple for our employees.**
 
-      The real-time threat detection and automated response features have significantly reduced our risk exposure. We now feel more confident than ever about our data security posture.
+      Our staff can clock in and request leave directly from their mobile portal. Admin overhead has dropped by over 60%.
   - name: "Richard Lee"
-    designation: "CTO at Tech Innovators Inc."
+    designation: "Trustee Team Lead at HDF Trustees"
     avatar: "/images/avatar/5.png"
     content: |
-      **The granular access controls and detailed user activity tracking have given us unparalleled visibility.**
+      **The custom form builder and task approvals have transformed how we handle client audits.**
 
-      The granular access controls and detailed user activity tracking have given us unparalleled visibility into our system's security. This platform has helped us maintain our data.
+      We can set checklists and approval gates for clients, keeping document verification structured and traceable.
   - name: "David Thompson"
-    designation: "COO at Financial Services Group"
+    designation: "Founder at Tech Startup"
     avatar: "/images/avatar/6.png"
     content: |
-      **The comprehensive risk analysis and impact visualization tools are exceptional.**
+      **Pontora keeps our digital records and employee onboarding completely in order.**
 
-      The comprehensive risk analysis and impact visualization tools are exceptional. We can quickly identify and mitigate potential threats before they become serious issues.
+      We no longer use scattered spreadsheets or manual folders for files. Everything is structured around role-based panels.
 ---

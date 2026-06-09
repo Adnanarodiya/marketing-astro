@@ -1,37 +1,37 @@
 ---
 enable: true
 subtitle: "Essential Feature"
-title: "Discover the Features That Makes Fortify Stand Out."
-description: "Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security."
+title: "Discover the Features That Makes Pontora Stand Out."
+description: "Your Trusted Partner in Business Administration with Core Solutions for Comprehensive Operations."
 list:
-  - title: "Organize and understand data"
+  - title: "Organize operations and track progress"
     image: "/images/features/essential-feature-1.png"
-    description: "Allows you to set thresholds for security parameters and receive real-time alerts when these thresholds are breached ensuring you stay informed f critical events."
+    description: "Allows you to establish custom forms, templates, and checklists so that tasks and processes are clearly defined."
     bulletpoints_y:
       - icon: "/images/icons/png/log.png"
         title: "Detailed User Logs"
-        description: "Our platform regularly logs all user activities including logins."
+        description: "Our platform regularly logs all user activities including logins and setting updates."
       - icon: "/images/icons/svg/code.svg"
-        title: "Anomaly Detection"
-        description: "This includes unusual login times and access to restricted data."
+        title: "Direct Collaborations"
+        description: "Enables secure, transparent data sharing and task assignments between companies and trustee firms."
     button:
       enable: false
       label: "Get Started Now"
       link: "#"
 
-  - title: "Delivers an all-encompassing security summary."
+  - title: "Delivers a comprehensive administration overview."
     image: "/images/features/essential-feature-2.png"
-    description: ""
+    description: "Access real-time dashboards scoped to your specific operational role."
     bulletpoints_x:
       - icon: "/images/icons/svg/code.svg"
         title: ""
-        description: "Our platform ensures that all sensitive data is encrypted both during transmission and while stored"
+        description: "Ensure that sensitive records are protected with industry-standard compliance and encryption."
       - icon: "/images/icons/svg/code.svg"
         title: ""
-        description: "Implement role-based access controls (RBAC) and multi-factor authentication (MFA)."
+        description: "Implement role-based access controls (RBAC) to restrict location and manager permissions."
       - icon: "/images/icons/svg/code.svg"
         title: ""
-        description: "Regularly audit user access to sensitive information and systems to ensure compliance with security policies"
+        description: "Regularly audit user access to timesheets, receipts, and compliance logs."
     button:
       enable: true
       label: "Get Started"

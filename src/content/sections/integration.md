@@ -1,14 +1,14 @@
 ---
 enable: true
 subtitle: "Integration"
-title: How Our Data Security Tools Fit into Your Workflow
-description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+title: How Pontora Fits into Your Workflow
+description: Connect Pontora with your existing business tools to create a seamless operational pipeline.
 
 # Testimonials
 list:
-  - name: HTML 5
+  - name: Google Workspace
     image: "/images/integration/1.svg"
-    description: Easily integrate Behance with Fortify to provide better experience.
+    description: Easily integrate Google Workspace with Pontora to import employee directories and synchronize schedules.
     button:
       enable: true
       label: ""
@@ -16,19 +16,19 @@ list:
     list:
       - Efficiency
       - Productivity
-  - name: Youtube
-    image: "/images/integration/2.svg"
-    description: Easily integrate Behance with Fortify to provide better experience.
+  - name: Microsoft 365
+    image: "/images/integration/6.svg"
+    description: Connect Microsoft 365 with Pontora to export documents, synchronize Outlook calendars, and automate workflows.
     button:
       enable: true
       label: ""
       link: "#?"
     list:
-      - Efficiency
-      - Productivity
-  - name: Google Meet
+      - Expression
+      - Competence
+  - name: Slack
     image: "/images/integration/3.svg"
-    description: Effortlessly combine Behance with Fortify to improve user experience.
+    description: Push instant notifications, approval updates, and timesheet reminders directly into Slack channels.
     button:
       enable: true
       label: ""
@@ -36,9 +36,19 @@ list:
     list:
       - Effectiveness
       - Inventiveness
-  - name: Reddit
+  - name: Zoom
+    image: "/images/integration/2.svg"
+    description: Schedule workspace check-ins and onboarding sessions directly within the employee dashboard.
+    button:
+      enable: true
+      label: ""
+      link: "#?"
+    list:
+      - Efficiency
+      - Productivity
+  - name: QuickBooks
     image: "/images/integration/4.svg"
-    description: Link Behance with Fortify to enhance user experience effortlessly.
+    description: Export Cashbook logs and extracted receipt data from Pontora directly into QuickBooks accounting.
     button:
       enable: true
       label: ""
@@ -48,7 +58,7 @@ list:
       - Versatility
   - name: Spotify
     image: "/images/integration/5.svg"
-    description: Integrate Behance with Fortify for an improved user experience.
+    description: Integrate Spotify widget with employee self-service workspace to enhance team environment.
     button:
       enable: true
       label: ""
@@ -56,19 +66,9 @@ list:
     list:
       - Imagery
       - Proficiency
-  - name: Microsoft
-    image: "/images/integration/6.svg"
-    description: Intertwine Behance with Fortify to provide a better experience.
-    button:
-      enable: true
-      label: ""
-      link: "#?"
-    list:
-      - Expression
-      - Competence
   - name: Pinterest
     image: "/images/integration/7.svg"
-    description: Easily integrate Behance with Fortify to provide better experience.
+    description: Easily integrate Pinterest links for design layout assets in workspace tasks.
     button:
       enable: true
       label: ""
@@ -78,7 +78,7 @@ list:
       - Invention
   - name: LinkedIn
     image: "/images/integration/8.svg"
-    description: Blend Behance seamlessly with Fortify for a better experience.
+    description: Blend LinkedIn jobs seamlessly with Pontora for recruiting and onboarding workflows.
     button:
       enable: true
       label: ""
@@ -86,9 +86,9 @@ list:
     list:
       - Competency
       - Innovation
-  - name: Messenger
+  - name: Meta
     image: "/images/integration/9.svg"
-    description: Connect Behance and Fortify seamlessly for better experience.
+    description: Connect social page dashboards with gastro operations tracking for marketing analytics.
     button:
       enable: true
       label: ""

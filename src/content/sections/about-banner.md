@@ -1,7 +1,7 @@
 ---
 enable: true
-title: About Fortify, Our Commitment to Securing Your Data
-description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+title: About Pontora, Our Commitment to Streamlining Operations
+description: Your Trusted Partner in Business Administration with Core Solutions for Comprehensive Operations.
 subtitle: About Us
 
 left_image: /images/about-1.jpg
@@ -12,5 +12,5 @@ quote:
   name: Adam Watson
   designation: Founder and CEO.
   content: |
-    Welcome to Fortify! Our team is dedicated to safeguarding your data with the most advanced security solutions available. In today's digital age, data security is not just a necessity all share.
+    Welcome to Pontora! Our team is dedicated to bringing order, security, and efficiency to day-to-day business operations. In today's digital landscape, modern firms need a unified operating system, not a mess of disconnected files.
 ---

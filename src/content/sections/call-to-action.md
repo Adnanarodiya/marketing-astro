@@ -1,8 +1,8 @@
 ---
 enable: true
-title: "Secure Your Data with Fortify Protection Solution"
+title: "Secure Your Operations with Pontora"
 image: "/images/cta-bg.svg"
-description: "Allows you to set thresholds for security parameters and receive real-time alerts when these thresholds are breached."
+description: "Allows you to streamline company settings, locations, timesheets, tasks, documents, and trustee approvals from a single dashboard."
 button:
   enable: true
   label: "Get Started"
