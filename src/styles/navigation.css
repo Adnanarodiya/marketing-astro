@@ -30,6 +30,10 @@
     .nav-link {
       @apply text-text hover:text-tertiary relative flex items-center px-3 py-2 font-medium transition after:w-0 max-lg:justify-center lg:px-2 lg:py-3;
 
+      &.active {
+        @apply text-tertiary;
+      }
+
       .arrow-icon {
         @apply relative -z-10 inline-flex w-4 items-center justify-center text-center align-[-2px] text-xs/snug transition-transform duration-300;
       }
@@ -49,6 +53,10 @@
 
     .nav-dropdown-link {
       @apply text-text-dark/70 hover:bg-tertiary/5 hover:text-tertiary block rounded px-3 py-1.5 font-medium transition max-lg:text-center;
+
+      &.active {
+        @apply text-tertiary;
+      }
     }
   }
 

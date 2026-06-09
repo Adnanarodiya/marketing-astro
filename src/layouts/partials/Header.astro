@@ -23,6 +23,8 @@ const { banner, bannerData, errorPage } = Astro.props;
 const { main }: { main: NavigationLink[] } = menu;
 const { navigation_buttons } = config;
 const { pathname } = Astro.url;
+
+const cleanPath = (u: string) => u.replace(/\/$/, "");
 ---
 
 <div
@@ -67,10 +69,7 @@ const { pathname } = Astro.url;
                 <li class="nav-item nav-dropdown group relative">
                   <span
                     class={`nav-link flex items-center ${
-                      menu.children?.map(({ url }) => url).includes(pathname) ||
-                      menu.children
-                        ?.map(({ url }) => `${url}/`)
-                        .includes(pathname)
+                      menu.children?.map(({ url }) => cleanPath(url)).includes(cleanPath(pathname))
                         ? "active"
                         : ""
                     }`}>
@@ -89,8 +88,7 @@ const { pathname } = Astro.url;
                           aria-label={child.name}
                           title={child.name}
                           class={`nav-dropdown-link block ${
-                            (pathname === `${child.url}/` ||
-                              pathname === child.url) &&
+                            cleanPath(pathname) === cleanPath(child.url) &&
                             "active"
                           }`}>
                           {child.name}
@@ -105,7 +103,7 @@ const { pathname } = Astro.url;
                     href={menu.url}
                     title={menu.name}
                     class={`nav-link flex items-center ${
-                      (pathname === `${menu.url}/` || pathname === menu.url) &&
+                      cleanPath(pathname) === cleanPath(menu.url) &&
                       "active"
                     }`}>
                     {menu.name}
