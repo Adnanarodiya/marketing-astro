@@ -3,7 +3,9 @@ import ImageMod from "@/components/ImageMod.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const sectionData = await getListPage(
+const { content } = Astro.props;
+
+const sectionData = content ? { data: content } : await getListPage(
   "ourValuesSection",
   "our-values"
 );
@@ -35,7 +37,7 @@ const { title, subtitle, description, list, stats } = sectionData.data;
       <div class="col-12 pt-20">
         <div class="row g-4 justify-center">
           {
-            list?.map((item, index) => (
+            list?.map((item: any, index: number) => (
               <div
                 class="md:col-6 lg:col-4"
                 data-aos="fade-up-sm"
@@ -63,7 +65,7 @@ const { title, subtitle, description, list, stats } = sectionData.data;
         </div>
         <div class="row g-4 justify-center pt-16">
           {
-            stats?.map((item, index) => (
+            stats?.map((item: any, index: number) => (
               <div
                 class="md:col-4 lg:col-4"
                 data-aos="fade-up-sm"

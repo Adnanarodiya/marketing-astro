@@ -114,52 +114,28 @@ const { pathname } = Astro.url;
           ))
         }
         {
-          navigation_buttons.login?.enable && (
-            <a
-              class="btn btn-outline-primary px-6 mt-2 lg:hidden w-full justify-center"
-              href={navigation_buttons.login.link}
-              target={
-                navigation_buttons.login.link.startsWith("http") ? "_blank" : "_self"
-              }>
-              {navigation_buttons.login.label}
-            </a>
-          )
-        }
-        {
-          navigation_buttons.signup?.enable && (
+          navigation_buttons.dashboard?.enable && (
             <a
               class="btn btn-primary px-6 mt-2 lg:hidden w-full justify-center"
-              href={navigation_buttons.signup.link}
+              href={navigation_buttons.dashboard.link}
               target={
-                navigation_buttons.signup.link.startsWith("http") ? "_blank" : "_self"
+                navigation_buttons.dashboard.link.startsWith("http") ? "_blank" : "_self"
               }>
-              {navigation_buttons.signup.label}
+              {navigation_buttons.dashboard.label}
             </a>
           )
         }
       </ul>
       <div class="order-1 ml-auto flex items-center gap-3 md:order-2 lg:ml-0">
         {
-          navigation_buttons.login?.enable && (
-            <a
-              class="btn btn-outline-primary px-6 hidden lg:flex"
-              href={navigation_buttons.login.link}
-              target={
-                navigation_buttons.login.link.startsWith("http") ? "_blank" : "_self"
-              }>
-              {navigation_buttons.login.label}
-            </a>
-          )
-        }
-        {
-          navigation_buttons.signup?.enable && (
+          navigation_buttons.dashboard?.enable && (
             <a
               class="btn btn-primary px-6 hidden lg:flex"
-              href={navigation_buttons.signup.link}
+              href={navigation_buttons.dashboard.link}
               target={
-                navigation_buttons.signup.link.startsWith("http") ? "_blank" : "_self"
+                navigation_buttons.dashboard.link.startsWith("http") ? "_blank" : "_self"
               }>
-              {navigation_buttons.signup.label}
+              {navigation_buttons.dashboard.label}
             </a>
           )
         }

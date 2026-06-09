@@ -31,15 +31,10 @@
     "gtm_id": "GTM-XXXXXX"
   },
   "navigation_buttons": {
-    "login": {
+    "dashboard": {
       "enable": true,
-      "label": "Login",
-      "link": "/login"
-    },
-    "signup": {
-      "enable": true,
-      "label": "Sign Up",
-      "link": "/signup"
+      "label": "Dashboard",
+      "link": "https://dashboard.pontora.com"
     }
   },
   "metadata": {

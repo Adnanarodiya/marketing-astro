@@ -14,13 +14,30 @@ const pricing = await getListPage(
 if(pricing.data.draft){
   return Astro.redirect("/404");
 }
-const { testimonial, hero } = pricing.data;
+const { sections } = pricing.data;
 ---
 
 <Base {...pricing.data}>
-  <PricingSection largeHeading={true} content={hero} />
-  <Clients />
-  <Testimonial content={testimonial} visible_testimonial={3} />
-  <Faq />
-  <CallToAction />
+  {
+    sections?.map((section) => {
+      if (section.enable === false) {
+        return null;
+      }
+
+      switch (section.type) {
+        case "pricing":
+          return <PricingSection largeHeading={true} content={section} />;
+        case "clients":
+          return <Clients content={section} />;
+        case "testimonial":
+          return <Testimonial content={section} visible_testimonial={3} />;
+        case "faq":
+          return <Faq />;
+        case "page_cta":
+          return <CallToAction content={section} />;
+        default:
+          return null;
+      }
+    })
+  }
 </Base>

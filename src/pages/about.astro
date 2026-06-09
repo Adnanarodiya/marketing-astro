@@ -15,10 +15,28 @@ if (aboutIndex.data.draft) {
 ---
 
 <Base {...aboutIndex.data}>
-  <AboutBanner />
-  <Clients />
-  <OurValues />
-  <OurTeam />
-  <Faq />
-  <CallToAction />
+  {
+    aboutIndex.data.sections?.map((section) => {
+      if (section.enable === false) {
+        return null;
+      }
+
+      switch (section.type) {
+        case "about_banner":
+          return <AboutBanner content={section} />;
+        case "clients":
+          return <Clients content={section} />;
+        case "our_values":
+          return <OurValues content={section} />;
+        case "our_team":
+          return <OurTeam content={section} />;
+        case "faq":
+          return <Faq />;
+        case "page_cta":
+          return <CallToAction content={section} />;
+        default:
+          return null;
+      }
+    })
+  }
 </Base>

@@ -11,15 +11,6 @@ const commonFields = {
   draft: z.boolean(),
 };
 
-export const about = defineCollection({
-  loader: glob({
-    pattern: "**/-*.{md,mdx}",
-    base: "src/content/about",
-  }),
-  schema: z.object({
-    ...commonFields,
-  }),
-});
 
 export const authors = defineCollection({
   loader: glob({
@@ -62,27 +53,6 @@ export const changelog = defineCollection({
   }),
 });
 
-export const contact = defineCollection({
-  loader: glob({
-    pattern: "**/-*.{md,mdx}",
-    base: "src/content/contact",
-  }),
-  schema: z.object({
-   ...commonFields,
-    hero: z.object({
-      subtitle: z.string(),
-      title: z.string(),
-      description: z.string(),
-      list: z.array(
-        z.object({
-          icon: z.string(),
-          title: z.string(),
-          description: z.string(),
-        }),
-      ),
-    }),
-  }),
-});
 
 export const features = defineCollection({
   loader: glob({
@@ -119,27 +89,6 @@ export const pages = defineCollection({
   }),
 });
 
-export const pricing = defineCollection({
-  loader: glob({
-    pattern: "**/-*.{md,mdx}",
-    base: "src/content/pricing",
-  }),
-  schema: z.object({
-   ...commonFields,
-    hero: z.object({
-      subtitle: z.string(),
-      title: z.string(),
-      description: z.string(),
-    }),
-    testimonial: z
-      .object({
-        subtitle: z.string(),
-        title: z.string(),
-        description: z.string(),
-      })
-      .optional(),
-  }),
-});
 
 export const review = defineCollection({
   loader: glob({
@@ -300,6 +249,73 @@ const pageCtaSchema = z.object({
   }),
 });
 
+const aboutBannerSchema = z.object({
+  type: z.literal("about_banner"),
+  enable: z.boolean().optional(),
+  title: z.string(),
+  subtitle: z.string().optional(),
+  description: z.string(),
+  left_image: z.string().optional(),
+  right_image: z.string().optional(),
+  quote: z.object({
+    avatar: z.string(),
+    name: z.string(),
+    designation: z.string(),
+    content: z.string(),
+  }).optional(),
+});
+
+const ourValuesSchema = z.object({
+  type: z.literal("our_values"),
+  enable: z.boolean().optional(),
+  title: z.string(),
+  subtitle: z.string().optional(),
+  description: z.string(),
+  list: z.array(
+    z.object({
+      icon: z.string().optional(),
+      title: z.string().optional(),
+      description: z.string().optional(),
+    })
+  ).optional(),
+  stats: z.array(
+    z.object({
+      label: z.string().optional(),
+      value: z.string().optional(),
+    })
+  ).optional(),
+});
+
+const ourTeamSchema = z.object({
+  type: z.literal("our_team"),
+  enable: z.boolean().optional(),
+  title: z.string(),
+  subtitle: z.string().optional(),
+  description: z.string(),
+  list: z.array(
+    z.object({
+      name: z.string().optional(),
+      image: z.string().optional(),
+      company: z.string().optional(),
+    })
+  ).optional(),
+});
+
+const contactHeroSchema = z.object({
+  type: z.literal("contact_hero"),
+  enable: z.boolean().optional(),
+  title: z.string(),
+  subtitle: z.string().optional(),
+  description: z.string(),
+  list: z.array(
+    z.object({
+      icon: z.string().optional(),
+      title: z.string().optional(),
+      description: z.string().optional(),
+    })
+  ).optional(),
+});
+
 const sectionSchema = z.discriminatedUnion("type", [
   bannerSchema,
   clientsSchema,
@@ -311,7 +327,44 @@ const sectionSchema = z.discriminatedUnion("type", [
   testimonialSchema,
   faqSchema,
   pageCtaSchema,
+  aboutBannerSchema,
+  ourValuesSchema,
+  ourTeamSchema,
+  contactHeroSchema,
 ]);
+
+export const about = defineCollection({
+  loader: glob({
+    pattern: "**/-*.{md,mdx}",
+    base: "src/content/about",
+  }),
+  schema: z.object({
+    ...commonFields,
+    sections: z.array(sectionSchema),
+  }),
+});
+
+export const contact = defineCollection({
+  loader: glob({
+    pattern: "**/-*.{md,mdx}",
+    base: "src/content/contact",
+  }),
+  schema: z.object({
+    ...commonFields,
+    sections: z.array(sectionSchema),
+  }),
+});
+
+export const pricing = defineCollection({
+  loader: glob({
+    pattern: "**/-*.{md,mdx}",
+    base: "src/content/pricing",
+  }),
+  schema: z.object({
+    ...commonFields,
+    sections: z.array(sectionSchema),
+  }),
+});
 
 export const homepage = defineCollection({
   loader: glob({

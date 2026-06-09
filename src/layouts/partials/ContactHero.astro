@@ -6,12 +6,21 @@ import { markdownify } from "@/lib/utils/textConverter";
 
 const { contact_form_action } = config.params;
 
-const contactIndex = await getListPage("contact", "-index");
-if (contactIndex.data.draft){
-  return Astro.redirect("/404");
-}
+const { content } = Astro.props;
 
-const { hero } = contactIndex.data;
+let hero;
+if (content) {
+  hero = content;
+} else {
+  const contactIndex = await getListPage("contact", "-index");
+  if (contactIndex.data.draft){
+    return Astro.redirect("/404");
+  }
+  hero = contactIndex.data.sections?.find((s) => s.type === "contact_hero");
+}
+if (!hero) {
+  return null;
+}
 ---
 
 <section class="section">
@@ -42,7 +51,7 @@ const { hero } = contactIndex.data;
         {
           hero.list && (
             <div class="mt-10 flex flex-col gap-10 sm:flex-row xl:mt-20">
-              {hero.list.map((point) => (
+              {hero.list.map((point: any) => (
                 <div>
                   {point.icon && (
                     <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary">
@@ -75,12 +84,14 @@ const { hero } = contactIndex.data;
         class="relative pt-24 lg:col-5 lg:pt-16"
         data-aos="fade-left-sm"
         data-aos-delay="200">
-        <ImageMod
-          class="absolute left-1/2 top-5 -z-10 w-20 -translate-x-1/2 lg:-top-7"
-          src={"/images/logo-icon.svg"}
-          alt="hero image"
-          loading="eager"
-        />
+        <div class="mb-4 flex items-center justify-center">
+          <ImageMod
+            class="w-auto h-12"
+            src={"/images/logo.png"}
+            alt="hero image"
+            loading="eager"
+          />
+        </div>
         <div class="rounded-2xl bg-light p-5 md:p-10">
           <form class="row g-4" action={contact_form_action} method="POST">
             <div class="lg:col-6">

@@ -16,7 +16,22 @@ if (contactIndex.data.draft){
 ---
 
 <Base {...contactIndex.data}>
-  <ContactHero />
-  <Faq />
-  <CallToAction />
+  {
+    contactIndex.data.sections?.map((section) => {
+      if (section.enable === false) {
+        return null;
+      }
+
+      switch (section.type) {
+        case "contact_hero":
+          return <ContactHero content={section} />;
+        case "faq":
+          return <Faq />;
+        case "page_cta":
+          return <CallToAction content={section} />;
+        default:
+          return null;
+      }
+    })
+  }
 </Base>
