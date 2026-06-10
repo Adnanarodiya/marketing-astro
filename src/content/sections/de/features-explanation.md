@@ -1,23 +1,23 @@
 ---
 enable: true
-subtitle: "Features Explained"
-title: "Interactive Chart Displays Key Metrics and Trends."
-description: "Your Trusted Partner in Data Protection with Cutting-Edge Solutions <br> for Comprehensive Data Security."
+subtitle: "Funktionen erklärt"
+title: "Echtzeit-Betriebsstatus & Einblicke"
+description: "Halten Sie Ihr Unternehmen, Ihre Standorte und Ihre Treuhandkanzlei über zentrale Dashboards perfekt auf dem Laufenden."
 image: "/images/features/product.png"
 list:
   - row:
-      - title: "Security Status Indicator"
-        description: "Displays the current security status of your organization with a clear color-coded indicator."
-      - title: "User Activity Monitoring"
-        description: "Highlights the most frequently accessed sensitive files or databases and the users involved, ensuring transparency and control over critical data."
+      - title: "Aktive Stundenzettel"
+        description: "Überwachen Sie Mitarbeiter-Zeiterfassungen, Arbeitszeitgrenzen und ausstehende Urlaubsprotokolle."
+      - title: "Dokumentenbibliothek"
+        description: "Greifen Sie auf Vorlagen, erstellte Vertragsdateien und von Kunden eingereichte Formulare zu."
   - row:
-      - title: "Threat Landscape Overview"
-        description: "Breaks down the threats by type (e.g., phishing, malware, ransomware) to give a detailed overview of the threat landscape."
-      - title: "Data Access Monitoring"
-        description: "Highlights the most frequently accessed sensitive files or databases and the users involved."
+      - title: "Gastro-Umsatzprotokolle"
+        description: "Erfassen Sie tägliche Umsatzbuchungen in den abrechenbaren Restaurantstandorten."
+      - title: "Treuhand-Freigaben"
+        description: "Überwachen Sie Aufgaben-Eskalationen, Dokumentenvalidierungen und Treuhänderzuweisungen."
   - row:
-      - title: "Incident Management"
-        description: "Lists the number of active security incidents currently being addressed."
-      - title: "Compliance Monitoring"
-        description: "Our system continuously monitors your network and data environments for any suspicious activities."
+      - title: "Onboarding-Checkliste"
+        description: "Überwachen Sie den Onboarding-Status von Mitarbeiterprofilen und ausstehende Dokumentenuploads."
+      - title: "Aktivitätsprotokolle & Audits"
+        description: "Überprüfen Sie den Arbeitsbereichsverlauf, Berechtigungs-Updates und Organisationseinstellungen."
 ---

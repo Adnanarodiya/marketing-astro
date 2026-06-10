@@ -84,7 +84,9 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
                   <span
                     class={`nav-link flex items-center ${
                       menu.children
-                        ?.map(({ url }) => cleanPath(getRelativeLocaleUrl(currentLocale, url)))
+                        ?.map(({ url }) =>
+                          cleanPath(getRelativeLocaleUrl(currentLocale, url)),
+                        )
                         .includes(cleanPath(pathname))
                         ? "active"
                         : ""
@@ -104,8 +106,10 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
                           aria-label={child.name}
                           title={child.name}
                           class={`nav-dropdown-link block ${
-                            cleanPath(pathname) === cleanPath(getRelativeLocaleUrl(currentLocale, child.url)) &&
-                            "active"
+                            cleanPath(pathname) ===
+                              cleanPath(
+                                getRelativeLocaleUrl(currentLocale, child.url),
+                              ) && "active"
                           }`}>
                           {child.name}
                         </a>
@@ -119,7 +123,10 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
                     href={getRelativeLocaleUrl(currentLocale, menu.url)}
                     title={menu.name}
                     class={`nav-link flex items-center ${
-                      cleanPath(pathname) === cleanPath(getRelativeLocaleUrl(currentLocale, menu.url)) && "active"
+                      cleanPath(pathname) ===
+                        cleanPath(
+                          getRelativeLocaleUrl(currentLocale, menu.url),
+                        ) && "active"
                     }`}>
                     {menu.name}
                   </a>
@@ -131,10 +138,13 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
 
         {/* Mobile Language Switcher */}
         <li class="nav-item nav-dropdown group relative mt-4 lg:hidden">
-          <span class="nav-link flex items-center justify-between cursor-pointer">
+          <span
+            class="nav-link flex items-center justify-between cursor-pointer">
             <span class="flex items-center gap-2">
               <img
-                src={currentLocale === "de" ? "https://flagcdn.com/de.svg" : "https://flagcdn.com/gb.svg"}
+                src={currentLocale === "de"
+                  ? "https://flagcdn.com/de.svg"
+                  : "https://flagcdn.com/gb.svg"}
                 class="h-4 w-4 rounded-full object-cover"
                 alt="flag"
               />
@@ -142,7 +152,9 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
             </span>
             <span class="arrow-icon">
               <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                </path>
               </svg>
             </span>
           </span>
@@ -193,30 +205,37 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
       <div class="order-1 ml-auto flex items-center gap-3 md:order-2 lg:ml-0">
         {/* Desktop Language Switcher */}
         <div class="nav-item nav-dropdown group relative hidden lg:block z-50">
-          <span class="nav-link flex items-center gap-1.5 cursor-pointer text-text hover:text-tertiary px-3 py-2 font-medium transition">
+          <span
+            class="nav-link flex items-center gap-1.5 cursor-pointer text-text hover:text-tertiary px-3 py-2 font-medium transition">
             <img
-              src={currentLocale === "de" ? "https://flagcdn.com/de.svg" : "https://flagcdn.com/gb.svg"}
-              class="h-4 w-4 rounded-full object-cover"
+              src={currentLocale === "de"
+                ? "https://flagcdn.com/de.svg"
+                : "https://flagcdn.com/gb.svg"}
+              class="h-5 w-5 rounded-full object-cover"
               alt="flag"
             />
             {currentLocale.toUpperCase()}
-            <span class="arrow-icon transition-transform duration-300 group-hover:rotate-180">
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            <span
+              class="arrow-icon transition-transform duration-300 group-hover:rotate-180">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z">
+                </path>
               </svg>
             </span>
           </span>
-          <ul class="nav-dropdown-list lg:invisible lg:absolute lg:right-0 lg:translate-y-1 lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:block lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+          <ul
+            class="nav-dropdown-list lg:invisible lg:absolute lg:right-0 lg:translate-y-1 lg:opacity-0 lg:transition-all lg:duration-300 lg:group-hover:visible lg:group-hover:block lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
             <li class="nav-dropdown-item">
               <a
                 href={currentLocale === "de" ? "#" : otherLocaleUrl}
                 class={`nav-dropdown-link flex items-center gap-2 ${currentLocale === "de" && "active font-bold pointer-events-none"}`}>
                 <img
                   src="https://flagcdn.com/de.svg"
-                  class="h-3.5 w-3.5 rounded-full object-cover"
+                  class="h-5 w-5 rounded-full object-cover"
                   alt="de flag"
                 />
-                Deutsch (DE)
+                Deutsch
               </a>
             </li>
             <li class="nav-dropdown-item">
@@ -225,10 +244,10 @@ if (!config.site.trailing_slash && otherLocaleUrl !== "/") {
                 class={`nav-dropdown-link flex items-center gap-2 ${currentLocale === "en" && "active font-bold pointer-events-none"}`}>
                 <img
                   src="https://flagcdn.com/gb.svg"
-                  class="h-3.5 w-3.5 rounded-full object-cover"
+                  class="h-5 w-5 rounded-full object-cover"
                   alt="gb flag"
                 />
-                English (EN)
+                English
               </a>
             </li>
           </ul>

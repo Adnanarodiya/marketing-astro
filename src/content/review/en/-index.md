@@ -1,12 +1,12 @@
 ---
-title: "Review"
-meta_title: ""
-description: "this is meta description"
+title: "Reviews"
+meta_title: "Customer Reviews"
+description: "See what companies and trustee firms are saying about their experience with Pontora."
 image: ""
 draft: false
 
 testimonial:
   subtitle: "Reviews"
-  title: Testimonials from Satisfied Customers of Fortify
-  description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+  title: "Testimonials from Satisfied Customers of Pontora"
+  description: "See how businesses and trustee firms run day-to-day administration with more control, visibility, and accountability."
 ---

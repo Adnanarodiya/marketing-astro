@@ -1,51 +1,54 @@
 ---
 enable: true
-subtitle: "Pricing & Plan"
-title: "Choose a suitable plan"
-description: "Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security."
+subtitle: "Tarife & Preise"
+title: "Wählen Sie einen passenden Tarif"
+description: "Flexible Betriebsverwaltungspläne, maßgeschneidert für Unternehmensarbeitsbereiche, Standortleiter und Treuhandgesellschaften."
 
 plans_labels:
-  - "Monthly"
-  - "Yearly"
+  - "Monatlich"
+  - "Jährlich"
 plans:
-  - title: "Basic Plan"
-    description: "Ideal for small businesses or individuals looking to secure their data with fundamental protection features."
+  - title: "Standard-Tarif"
+    description: "Ideal für Unternehmen mit einem Standort, die Personalverwaltung, Stundenzettel und digitale Dokumente organisieren möchten."
     price_prefix: "$"
-    price_monthly: "29"
-    price_yearly: "129"
-    price_description_monthly: "per month, billed monthly"
-    price_description_yearly: "per month, billed yearly"
+    price_monthly: "49"
+    price_yearly: "39"
+    price_description_monthly: "pro Mitarbeiter / Monat, monatlich abgerechnet"
+    price_description_yearly: "pro Mitarbeiter / Monat, jährlich abgerechnet"
     features:
-      - Basic Threat Detection
-      - Basic Alerts & Reporting
-      - Daily Data Backup
-      - Email Support
-      - Single User License
+      - Mitarbeiterverwaltung
+      - Dokumentenbibliothek & Vorlagen
+      - Aufgaben & Formulareinsendungen
+      - Zeiterfassung & Urlaubsplanung
+      - Einzelner Standort-Kontext
+      - E-Mail- & Hilfecenter-Support
     badge:
       enable: false
-      label: "Recommended"
+      label: "Empfohlen"
     button:
       enable: true
-      label: "Select Basic Plan"
+      label: "Standard-Tarif wählen"
       link: "/contact/"
-  - title: "Premium Plan"
-    description: "Perfect for medium to large businesses requiring security features and priority support."
+  - title: "Profi-Tarif"
+    description: "Perfekt für Unternehmen mit mehreren Standorten, Gastronomiebetriebe und Firmen, die eine nahtlose Treuhand-Integration benötigen."
     price_prefix: "$"
-    price_monthly: "99"
-    price_yearly: "199"
-    price_description_monthly: "per month, billed monthly"
-    price_description_yearly: "per month, billed yearly"
+    price_monthly: "149"
+    price_yearly: "119"
+    price_description_monthly: "pro Unternehmen / Monat, monatlich abgerechnet"
+    price_description_yearly: "pro Unternehmen / Monat, jährlich abgerechnet"
     features:
-      - Advanced Threat Detection and Remediation
-      - Real-Time Alerts and Reporting
-      - Continuous Data Backup and Restore
-      - 24/7 Priority Support
-      - Multi-User Licenses (Up to 10 Users)
+      - Alles aus dem Standard-Tarif
+      - Multi-Standort-Einstellungen & Standortleiter
+      - Treuhand-Zusammenarbeit & Genehmigungen
+      - Gastro- & Restaurant-Tagesumsätze
+      - Belege, Kassenbuch & OCR-Datenextraktion
+      - Erweiterte Stundenzettel & Urlaubsregeln
+      - Priorisierter 24/7 Support
     badge:
       enable: true
-      label: "Recommended"
+      label: "Empfohlen"
     button:
       enable: true
-      label: "Select Premium Plan"
+      label: "Profi-Tarif wählen"
       link: "/contact/"
 ---

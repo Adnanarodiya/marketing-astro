@@ -1,21 +1,20 @@
 ---
 enable: true
-# Banner
-title: "Your Trusted Partner in Comprehensive Web Security"
-description: "Securing Your Digital World: Your Trusted Partner in Data Protection with <br> Cutting-Edge Solutions for Comprehensive Data Security."
+title: "Unified Operations Platform for Businesses and Trustees"
+description: "Manage workforce administration, digital documents, tasks, timesheets, cashbook records, and gastro entries from one secure workspace. Purpose-built for companies, employees, and trustee firms."
 bg_image: "/images/banner-bg.png"
 images:
-  - src: "/images/banner-main.png" # Main Image
-    alt: "image alt"
+  - src: "/images/banner-main.png"
+    alt: "Pontora Dashboard Preview"
   - src: "/images/banner-1.png"
     height: "72px"
-    alt: "image alt"
+    alt: "Pontora Timesheets"
   - src: "/images/banner-2.png"
     height: "114px"
-    alt: "image alt"
+    alt: "Pontora Gastro"
   - src: "/images/banner-3.png"
     height: "134px"
-    alt: "image alt"
+    alt: "Pontora Documents"
 buttons:
   - enable: true
     label: "Get Started"

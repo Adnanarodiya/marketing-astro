@@ -1,25 +1,25 @@
 ---
 enable: true
-subtitle: Core Values
-title: Our Values
-description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+subtitle: "Grundwerte"
+title: "Unsere Werte"
+description: "Betriebsabläufe vereinfachen und Unternehmen durch Zusammenarbeit und Verantwortlichkeit unterstützen."
 
 list:
-  - icon: "/images/icons/svg/detection.svg" # get outline svg icons from here - https://www.svgrepo.com/vectors/security/outlined/
-    title: Innovation
-    description: Continuously improving and innovating our solutions to stay ahead of cyber threats.
-  - icon: "/images/icons/svg/encryption.svg" # get outline svg icons from here - https://www.svgrepo.com/vectors/security/outlined/
-    title: Integrity
-    description: Upholding the highest standards of honesty and transparency in all our dealings.
-  - icon: "/images/icons/svg/time.svg" # get outline svg icons from here - https://www.svgrepo.com/vectors/security/outlined/
-    title: Customer-Centric
-    description: Maintaining the highest levels of honesty and transparency in all our interactions.
+  - icon: "/images/icons/svg/detection.svg"
+    title: "Zusammenarbeit"
+    description: "Verbinden Sie Mitarbeiter, Manager und externe Treuhänder in einem einheitlichen, rollenbasierten Arbeitsbereich."
+  - icon: "/images/icons/svg/encryption.svg"
+    title: "Transparenz"
+    description: "Aufrechterhaltung einer strukturierten Aufzeichnungspflicht, Audit-Trails und klarer Sichtbarkeit von Compliance-Aufgaben."
+  - icon: "/images/icons/svg/time.svg"
+    title: "Effizienz"
+    description: "Vermeidung von verstreuten Tabellenkalkulationen, manuellen Formularen und endlosen Hin- und Her-E-Mails."
 
 stats:
-  - label: Helped over 1000 businesses
-    value: 1000+
-  - label: Customer Satisfaction
-    value: 99.9%
-  - label: Support Availability
-    value: 24/7
+  - label: "Verwaltete Unternehmen"
+    value: "500+"
+  - label: "Kundenzufriedenheit"
+    value: "99.8%"
+  - label: "Systemverfügbarkeit"
+    value: "99.99%"
 ---

@@ -1,51 +1,54 @@
 ---
 enable: true
-subtitle: "Pricing & Plan"
+subtitle: "Pricing & Plans"
 title: "Choose a suitable plan"
-description: "Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security."
+description: "Flexible operations management plans tailored for company workspaces, site managers, and trustee firms."
 
 plans_labels:
   - "Monthly"
   - "Yearly"
 plans:
-  - title: "Basic Plan"
-    description: "Ideal for small businesses or individuals looking to secure their data with fundamental protection features."
+  - title: "Standard Plan"
+    description: "Ideal for single-location businesses looking to organize workforce administration, timesheets, and digital documents."
     price_prefix: "$"
-    price_monthly: "29"
-    price_yearly: "129"
-    price_description_monthly: "per month, billed monthly"
-    price_description_yearly: "per month, billed yearly"
+    price_monthly: "49"
+    price_yearly: "39"
+    price_description_monthly: "per employee / month, billed monthly"
+    price_description_yearly: "per employee / month, billed yearly"
     features:
-      - Basic Threat Detection
-      - Basic Alerts & Reporting
-      - Daily Data Backup
-      - Email Support
-      - Single User License
+      - Employee Management
+      - Document Library & Templates
+      - Tasks & Form Submissions
+      - Timesheets & Leave Clocking
+      - Single Location Context
+      - Email & Help Center Support
     badge:
       enable: false
       label: "Recommended"
     button:
       enable: true
-      label: "Select Basic Plan"
+      label: "Select Standard Plan"
       link: "/contact/"
-  - title: "Premium Plan"
-    description: "Perfect for medium to large businesses requiring security features and priority support."
+  - title: "Professional Plan"
+    description: "Perfect for multi-location operations, gastros, and businesses requiring seamless trustee integration."
     price_prefix: "$"
-    price_monthly: "99"
-    price_yearly: "199"
-    price_description_monthly: "per month, billed monthly"
-    price_description_yearly: "per month, billed yearly"
+    price_monthly: "149"
+    price_yearly: "119"
+    price_description_monthly: "per company / month, billed monthly"
+    price_description_yearly: "per company / month, billed yearly"
     features:
-      - Advanced Threat Detection and Remediation
-      - Real-Time Alerts and Reporting
-      - Continuous Data Backup and Restore
-      - 24/7 Priority Support
-      - Multi-User Licenses (Up to 10 Users)
+      - Everything in Standard
+      - Multi-Location Settings & Site Managers
+      - Trustee Collaboration & Approvals
+      - Gastro & Restaurant Daily Sales
+      - Receipts, Cashbook & OCR Extraction
+      - Advanced Timesheets & Vacation Rules
+      - Priority 24/7 Support
     badge:
       enable: true
       label: "Recommended"
     button:
       enable: true
-      label: "Select Premium Plan"
+      label: "Select Professional Plan"
       link: "/contact/"
 ---

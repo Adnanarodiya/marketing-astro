@@ -1,23 +1,23 @@
 ---
 enable: true
 subtitle: "Features Explained"
-title: "Interactive Chart Displays Key Metrics and Trends."
-description: "Your Trusted Partner in Data Protection with Cutting-Edge Solutions <br> for Comprehensive Data Security."
+title: "Real-Time Operational Posture & Insights"
+description: "Keep your organization, locations, and trustee firm perfectly aligned through central dashboards."
 image: "/images/features/product.png"
 list:
   - row:
-      - title: "Security Status Indicator"
-        description: "Displays the current security status of your organization with a clear color-coded indicator."
-      - title: "User Activity Monitoring"
-        description: "Highlights the most frequently accessed sensitive files or databases and the users involved, ensuring transparency and control over critical data."
+      - title: "Active Timesheets"
+        description: "Monitor employee clocks, working hour thresholds, and pending vacation logs."
+      - title: "Document Library"
+        description: "Access templates, generated contract files, and client-submitted forms."
   - row:
-      - title: "Threat Landscape Overview"
-        description: "Breaks down the threats by type (e.g., phishing, malware, ransomware) to give a detailed overview of the threat landscape."
-      - title: "Data Access Monitoring"
-        description: "Highlights the most frequently accessed sensitive files or databases and the users involved."
+      - title: "Gastro Sales Logs"
+        description: "Record daily sales revenue entries across billable restaurant locations."
+      - title: "Trustee Approvals"
+        description: "Oversee task escalations, document validations, and trustee assignments."
   - row:
-      - title: "Incident Management"
-        description: "Lists the number of active security incidents currently being addressed."
-      - title: "Compliance Monitoring"
-        description: "Our system continuously monitors your network and data environments for any suspicious activities."
+      - title: "Onboarding Checklist"
+        description: "Monitor employee onboarding profile status and pending document uploads."
+      - title: "Activity Logs & Audits"
+        description: "Review workspace history, permissions updates, and organizational settings."
 ---

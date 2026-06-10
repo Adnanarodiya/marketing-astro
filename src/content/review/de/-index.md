@@ -1,12 +1,12 @@
 ---
-title: "Review"
-meta_title: ""
-description: "this is meta description"
+title: "Kundenstimmen"
+meta_title: "Kundenbewertungen"
+description: "Erfahren Sie, was Unternehmen und Treuhandkanzleien über ihre Erfahrungen mit Pontora sagen."
 image: ""
 draft: false
 
 testimonial:
-  subtitle: "Reviews"
-  title: Testimonials from Satisfied Customers of Fortify
-  description: Your Trusted Partner in Data Protection with Cutting-Edge Solutions for <br> Comprehensive Data Security.
+  subtitle: "Bewertungen"
+  title: "Erfahrungsberichte von zufriedenen Pontora-Kunden"
+  description: "Sehen Sie selbst, wie Unternehmen und Treuhandkanzleien ihre tägliche Verwaltung mit mehr Kontrolle, Transparenz und Effizienz führen."
 ---
