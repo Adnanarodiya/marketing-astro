@@ -7,8 +7,8 @@ export const defaultLang = 'de';
 
 export const ui = {
   de: {
-    'footer.description': 'Pontora ist eine Multi-Tenant-Betriebsplattform für Treuhandgesellschaften, Unternehmen, Bauleiter und Mitarbeiter zur Verwaltung von Personalverwaltung, Dokumenten, Aufgaben, Genehmigungen, Arbeitszeittabellen, Belegen und täglichen Geschäftsabläufen.',
-    'footer.copyright': 'Copyright © {year} Pontora. Alle Rechte vorbehalten.',
+    'footer.description': 'Marketing ist eine Multi-Tenant-Betriebsplattform für Treuhandgesellschaften, Unternehmen, Bauleiter und Mitarbeiter zur Verwaltung von Personalverwaltung, Dokumenten, Aufgaben, Genehmigungen, Arbeitszeittabellen, Belegen und täglichen Geschäftsabläufen.',
+    'footer.copyright': 'Copyright © {year} Marketing. Alle Rechte vorbehalten.',
     'footer.resources': 'Ressourcen',
     'footer.quick_info': 'Schnellzugriff',
     'dashboard.label': 'Dashboard',
@@ -20,8 +20,8 @@ export const ui = {
     'last_modified': 'Zuletzt aktualisiert',
   },
   en: {
-    'footer.description': 'Pontora is a multi-tenant operations platform for trustee firms, companies, site managers, and employees to manage workforce administration, documents, tasks, approvals, timesheets, receipts, and daily business operations.',
-    'footer.copyright': 'Copyright © {year} Pontora. All Rights Reserved',
+    'footer.description': 'Marketing is a multi-tenant operations platform for trustee firms, companies, site managers, and employees to manage workforce administration, documents, tasks, approvals, timesheets, receipts, and daily business operations.',
+    'footer.copyright': 'Copyright © {year} Marketing. All Rights Reserved',
     'footer.resources': 'Resources',
     'footer.quick_info': 'Quick Info',
     'dashboard.label': 'Dashboard',

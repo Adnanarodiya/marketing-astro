@@ -1,6 +1,6 @@
 ---
 enable: true
-title: "Secure Your Operations with Pontora"
+title: "Secure Your Operations with Marketing"
 image: "/images/cta-bg.svg"
 description: "Allows you to streamline company settings, locations, timesheets, tasks, documents, and trustee approvals from a single dashboard."
 button:

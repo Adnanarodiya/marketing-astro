@@ -1,6 +1,6 @@
 ---
 enable: true
-title: About Pontora, Our Commitment to Streamlining Operations
+title: About Marketing, Our Commitment to Streamlining Operations
 description: Your Trusted Partner in Business Administration with Core Solutions for Comprehensive Operations.
 subtitle: About Us
 
@@ -12,5 +12,5 @@ quote:
   name: Adam Watson
   designation: Founder and CEO.
   content: |
-    Welcome to Pontora! Our team is dedicated to bringing order, security, and efficiency to day-to-day business operations. In today's digital landscape, modern firms need a unified operating system, not a mess of disconnected files.
+    Welcome to Marketing! Our team is dedicated to bringing order, security, and efficiency to day-to-day business operations. In today's digital landscape, modern firms need a unified operating system, not a mess of disconnected files.
 ---

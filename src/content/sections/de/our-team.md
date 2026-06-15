@@ -2,7 +2,7 @@
 enable: true
 subtitle: "Unser Team"
 title: "Lernen Sie unser Team kennen"
-description: "Die Designer, Entwickler und Betreiber hinter der Pontora-Plattform."
+description: "Die Designer, Entwickler und Betreiber hinter der Marketing-Plattform."
 
 list:
   - name: "Brooklyn Simmons"

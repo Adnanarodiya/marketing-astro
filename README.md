@@ -1,4 +1,4 @@
-# Pontora Marketing Website
+# Marketing Marketing Website
 
 A premium, modern, and highly optimized marketing and landing website built on **Astro v6**, **React**, **Tailwind CSS v4**, and **MDX**. 
 
@@ -9,14 +9,14 @@ This repository leverages a fully modular, section-based frontmatter schema stru
 ## 📖 Product Content Brief
 
 ### 1. Product Positioning
-* **Product Name**: Pontora
-* **One-Line Positioning**: Pontora is a multi-tenant operations platform for trustee firms, companies, site managers, and employees to manage workforce administration, documents, tasks, approvals, timesheets, receipts, and daily business operations from one secure workspace.
-* **Short Description**: Pontora brings company administration, employee records, trustee collaboration, digital documents, task management, timesheets, accounting documents, receipts, and operational workflows into one connected platform. It is built for organizations that need structured employee management, trusted external oversight, location-based operations, and clean digital records without scattered spreadsheets, email threads, or disconnected tools.
-* **Long Description**: Pontora helps businesses and trustee firms run day-to-day administration with more control, visibility, and accountability. Companies can manage employees, locations, documents, tasks, forms, billing, timesheets, receipts, creditors, and business settings from a central company workspace. Employees get a focused self-service area to complete onboarding, manage their profile, upload documents, submit forms, track tasks, and handle time-related workflows. Trustee firms can manage client companies, assign internal team members, create approval tasks, review operational records, and support companies through a dedicated trustee workspace.
+* **Product Name**: Marketing
+* **One-Line Positioning**: Marketing is a multi-tenant operations platform for trustee firms, companies, site managers, and employees to manage workforce administration, documents, tasks, approvals, timesheets, receipts, and daily business operations from one secure workspace.
+* **Short Description**: Marketing brings company administration, employee records, trustee collaboration, digital documents, task management, timesheets, accounting documents, receipts, and operational workflows into one connected platform. It is built for organizations that need structured employee management, trusted external oversight, location-based operations, and clean digital records without scattered spreadsheets, email threads, or disconnected tools.
+* **Long Description**: Marketing helps businesses and trustee firms run day-to-day administration with more control, visibility, and accountability. Companies can manage employees, locations, documents, tasks, forms, billing, timesheets, receipts, creditors, and business settings from a central company workspace. Employees get a focused self-service area to complete onboarding, manage their profile, upload documents, submit forms, track tasks, and handle time-related workflows. Trustee firms can manage client companies, assign internal team members, create approval tasks, review operational records, and support companies through a dedicated trustee workspace.
   
   The platform is designed around real organizational roles instead of generic user accounts. A company admin, employee, site manager, trustee admin, and trustee team member each sees the workflows that matter to them. This keeps daily work focused while preserving organization-level governance, auditability, and access control.
 
-### 2. The Problem Pontora Solves
+### 2. The Problem Marketing Solves
 Modern businesses often run critical administration across too many disconnected tools:
 * Employee data lives in spreadsheets.
 * Documents move through email and manual folders.
@@ -26,7 +26,7 @@ Modern businesses often run critical administration across too many disconnected
 * Trustee firms support companies through back-and-forth communication instead of structured workflows.
 * Site managers need local visibility without receiving unrestricted company admin access.
 
-Pontora solves this by creating one structured operating system for business administration. Each user works from the right role-based panel, and every module connects back to the organization, location, employee, and trustee context.
+Marketing solves this by creating one structured operating system for business administration. Each user works from the right role-based panel, and every module connects back to the organization, location, employee, and trustee context.
 
 ### 3. Role-Based Workspaces & Target Audience
 
@@ -130,10 +130,10 @@ npm run preview
 ## ⚙️ Customization Guide
 
 ### Site Branding & URLs
-To update the logo text, site title, contact configurations, or base URLs, edit [src/config/config.json](file:///d:/Office/pontora-marketing-website-/src/config/config.json).
+To update the logo text, site title, contact configurations, or base URLs, edit [src/config/config.json](file:///d:/Office/Marketing-marketing-website-/src/config/config.json).
 
 ### Navigations & Menus
-Add, remove, or modify links in the header navigation or footer section links inside [src/config/menu.json](file:///d:/Office/pontora-marketing-website-/src/config/menu.json).
+Add, remove, or modify links in the header navigation or footer section links inside [src/config/menu.json](file:///d:/Office/Marketing-marketing-website-/src/config/menu.json).
 
 ### Colors & Typography
-Update the primary, secondary, and tertiary theme colors or choose custom font stacks inside [src/config/theme.json](file:///d:/Office/pontora-marketing-website-/src/config/theme.json).
+Update the primary, secondary, and tertiary theme colors or choose custom font stacks inside [src/config/theme.json](file:///d:/Office/Marketing-marketing-website-/src/config/theme.json).

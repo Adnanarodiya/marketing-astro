@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Pontora",
-    "base_url": "https://pontora-marketing.vercel.app",
+    "title": "Marketing",
+    "base_url": "https://Marketing-marketing.vercel.app",
     "base_path": "/",
     "trailing_slash": true,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "134",
     "logo_height": "47",
-    "logo_text": "Pontora"
+    "logo_text": "Marketing"
   },
   "settings": {
     "pagination": 3,
@@ -17,8 +17,8 @@
   },
   "params": {
     "contact_form_action": "#",
-    "footer_description": "Pontora is a multi-tenant operations platform for trustee firms, companies, site managers, and employees to manage workforce administration, documents, tasks, approvals, timesheets, receipts, and daily business operations.",
-    "copyright": "Copyright © {year} Pontora. All Rights Reserved"
+    "footer_description": "Marketing is a multi-tenant operations platform for trustee firms, companies, site managers, and employees to manage workforce administration, documents, tasks, approvals, timesheets, receipts, and daily business operations.",
+    "copyright": "Copyright © {year} Marketing. All Rights Reserved"
   },
   "google_tag_manager": {
     "enable": false,
@@ -28,12 +28,12 @@
     "dashboard": {
       "enable": true,
       "label": "Dashboard",
-      "link": "https://dashboard.pontora.com"
+      "link": "https://dashboard.Marketing.com"
     }
   },
   "metadata": {
-    "meta_author": "Pontora",
+    "meta_author": "Marketing",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Pontora is a secure role-based operations platform that connects companies, employees, site managers, and trustee firms through shared workflows for workforce administration, digital documents, tasks, approvals, timesheets, receipts, restaurant/gastro daily operations, and multi-location administration."
+    "meta_description": "Marketing is a secure role-based operations platform that connects companies, employees, site managers, and trustee firms through shared workflows for workforce administration, digital documents, tasks, approvals, timesheets, receipts, restaurant/gastro daily operations, and multi-location administration."
   }
 }

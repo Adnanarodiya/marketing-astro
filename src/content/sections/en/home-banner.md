@@ -5,16 +5,16 @@ description: "Manage workforce administration, digital documents, tasks, timeshe
 bg_image: "/images/banner-bg.png"
 images:
   - src: "/images/banner-main.png"
-    alt: "Pontora Dashboard Preview"
+    alt: "Marketing Dashboard Preview"
   - src: "/images/banner-1.png"
     height: "72px"
-    alt: "Pontora Timesheets"
+    alt: "Marketing Timesheets"
   - src: "/images/banner-2.png"
     height: "114px"
-    alt: "Pontora Gastro"
+    alt: "Marketing Gastro"
   - src: "/images/banner-3.png"
     height: "134px"
-    alt: "Pontora Documents"
+    alt: "Marketing Documents"
 buttons:
   - enable: true
     label: "Get Started"

@@ -5,16 +5,16 @@ description: "Verwalten Sie Personalverwaltung, digitale Dokumente, Aufgaben, Ar
 bg_image: "/images/banner-bg.png"
 images:
   - src: "/images/banner-main.png"
-    alt: "Pontora Dashboard Vorschau"
+    alt: "Marketing Dashboard Vorschau"
   - src: "/images/banner-1.png"
     height: "72px"
-    alt: "Pontora Zeiterfassung"
+    alt: "Marketing Zeiterfassung"
   - src: "/images/banner-2.png"
     height: "114px"
-    alt: "Pontora Gastro"
+    alt: "Marketing Gastro"
   - src: "/images/banner-3.png"
     height: "134px"
-    alt: "Pontora Dokumente"
+    alt: "Marketing Dokumente"
 buttons:
   - enable: true
     label: "Erste Schritte"

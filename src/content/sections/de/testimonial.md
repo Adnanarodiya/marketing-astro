@@ -2,7 +2,7 @@
 enable: true
 subtitle: "12,000+ Happy Customers"
 title: Customer Reviews
-description: See how companies, site managers, and trustee firms collaborate efficiently on Pontora.
+description: See how companies, site managers, and trustee firms collaborate efficiently on Marketing.
 
 # Testimonials
 list:
@@ -10,7 +10,7 @@ list:
     designation: "COO at Gastro Group"
     avatar: "/images/avatar/1.png"
     content: |
-      **Implementing Pontora has been a game-changer for our multi-location restaurant operations.**
+      **Implementing Marketing has been a game-changer for our multi-location restaurant operations.**
 
       The daily sales logs and scoped site manager permissions make location tracking completely painless. Our managers now log reports directly into the workspace.
   - name: "Jane Smith"
@@ -45,7 +45,7 @@ list:
     designation: "Founder at Tech Startup"
     avatar: "/images/avatar/6.png"
     content: |
-      **Pontora keeps our digital records and employee onboarding completely in order.**
+      **Marketing keeps our digital records and employee onboarding completely in order.**
 
       We no longer use scattered spreadsheets or manual folders for files. Everything is structured around role-based panels.
 ---

@@ -1,7 +1,7 @@
 ---
 enable: true
 subtitle: "Essential Feature"
-title: "Discover the Features That Makes Pontora Stand Out."
+title: "Discover the Features That Makes Marketing Stand Out."
 description: "Your Trusted Partner in Business Administration with Core Solutions for Comprehensive Operations."
 list:
   - title: "Organize operations and track progress"

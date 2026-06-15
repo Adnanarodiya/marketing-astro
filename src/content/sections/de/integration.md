@@ -1,14 +1,14 @@
 ---
 enable: true
 subtitle: "Integration"
-title: How Pontora Fits into Your Workflow
-description: Connect Pontora with your existing business tools to create a seamless operational pipeline.
+title: How Marketing Fits into Your Workflow
+description: Connect Marketing with your existing business tools to create a seamless operational pipeline.
 
 # Testimonials
 list:
   - name: Google Workspace
     image: "/images/integration/1.svg"
-    description: Easily integrate Google Workspace with Pontora to import employee directories and synchronize schedules.
+    description: Easily integrate Google Workspace with Marketing to import employee directories and synchronize schedules.
     button:
       enable: true
       label: ""
@@ -18,7 +18,7 @@ list:
       - Productivity
   - name: Microsoft 365
     image: "/images/integration/6.svg"
-    description: Connect Microsoft 365 with Pontora to export documents, synchronize Outlook calendars, and automate workflows.
+    description: Connect Microsoft 365 with Marketing to export documents, synchronize Outlook calendars, and automate workflows.
     button:
       enable: true
       label: ""
@@ -48,7 +48,7 @@ list:
       - Productivity
   - name: QuickBooks
     image: "/images/integration/4.svg"
-    description: Export Cashbook logs and extracted receipt data from Pontora directly into QuickBooks accounting.
+    description: Export Cashbook logs and extracted receipt data from Marketing directly into QuickBooks accounting.
     button:
       enable: true
       label: ""
@@ -78,7 +78,7 @@ list:
       - Invention
   - name: LinkedIn
     image: "/images/integration/8.svg"
-    description: Blend LinkedIn jobs seamlessly with Pontora for recruiting and onboarding workflows.
+    description: Blend LinkedIn jobs seamlessly with Marketing for recruiting and onboarding workflows.
     button:
       enable: true
       label: ""

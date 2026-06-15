@@ -1,7 +1,7 @@
 ---
 enable: true
 subtitle: "How it Works"
-title: "How Pontora Streamlines Administration"
+title: "How Marketing Streamlines Administration"
 description: Connecting company admins, employees, and external trustees on a single platform to eliminate scattered email threads and spreadsheets.
 list:
   - icon: "/images/icons/svg/detection.svg"

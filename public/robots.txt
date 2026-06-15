@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /api/*
 
-Sitemap: https://pontora-marketing.vercel.app/sitemap-index.xml
+Sitemap: https://Marketing-marketing.vercel.app/sitemap-index.xml

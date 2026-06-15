@@ -2,7 +2,7 @@
 enable: true
 subtitle: "Our Team"
 title: "Meet Our Team"
-description: "The designers, builders, and operators behind the Pontora platform."
+description: "The designers, builders, and operators behind the Marketing platform."
 
 list:
   - name: "Brooklyn Simmons"
